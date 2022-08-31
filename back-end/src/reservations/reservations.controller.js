@@ -2,9 +2,20 @@ const service = require("./reservations.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 
 async function list(req, res) {
-  const data = await service.list();
-  res.json({ data: data });
+  const date = req.query.date
+  const data = await service.list(date);
+  res.json({ data });
 }
+
+// async function reservationExists(req, res, next) {
+//   const { reservationDate } = req.params;
+//   const reservation = await service.read(reservationDate);
+//   if (reservation) {
+//     res.locals.reservation = reservation;
+//     return next();
+//   }
+//   return next({ status: 404, message: `Comment cannot be found.` });
+// }
 
 // VALIDATION PIPELINE
 const VALID_PROPERTIES = [

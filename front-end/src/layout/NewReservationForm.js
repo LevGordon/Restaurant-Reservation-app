@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom"
+const {REACT_APP_API_BASE_URL} = process.env;
 
 function NewReservations() {
 
@@ -16,11 +17,24 @@ function NewReservations() {
 
   const history = useHistory()
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    console.log(formData.first_name, formData.last_name, formData.mobile_number, formData.reservation_date, formData.reservation_time, formData.people)
-    setFormData({ ...initialFormState })
-    history.push('/dashboard')
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formData)
+    const response = await fetch(
+        `${REACT_APP_API_BASE_URL}/reservations`,
+        {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+              },
+            body: JSON.stringify({
+                data: formData,
+            })
+        }
+    );
+    const resData = await response.json();
+    console.log(resData);
+    setFormData({ ...initialFormState });
   }
 
   const handleCancel = () => {

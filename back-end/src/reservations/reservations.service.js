@@ -7,9 +7,10 @@ async function create(reservation) {
         .then((reservations) => reservations[0])
 }
 
-function list() {
-    return knex("reservations").select("*")
-   }
+function list(date) {
+    return knex("reservations").select("*").where({"reservations.reservation_date" : date}).orderBy("reservation.reservation_time")
+   } 
+
 
 module.exports = {
     list,
