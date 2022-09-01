@@ -43,11 +43,10 @@ function NewReservations() {
     if (resData.error) {
       setError(resData.error);
     }
-    console.log(resData.error);
     if (response.status !== 400) {
       setFormData({ ...initialFormState });
-      history.goBack();
-      // history.push(`/dashboard?date=${formData.reservation_date}`)
+      // history.goBack();
+      history.push(`/dashboard?date=${formData.reservation_date}`)
     }
   };
 

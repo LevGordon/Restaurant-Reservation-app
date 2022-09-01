@@ -58,6 +58,14 @@ function Dashboard({ date }) {
   }
 
 
+  const noReservationsMessage = (
+    <div>
+      <h5>
+        There are no reservations on {date}
+      </h5>
+    </div>
+  )
+
   return (
     <main>
       <div className="row d-flex flex-column">
@@ -84,7 +92,7 @@ function Dashboard({ date }) {
       </div>
       {reservationsError ? <ErrorAlert error={reservationsError}/> : <></>}
       <hr />
-      <div className="row">{reservationslist}</div>
+      <div className="row">{reservationslist ? reservationslist : noReservationsMessage }</div>
     </main>
   );
 }

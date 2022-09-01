@@ -7,7 +7,7 @@ function ReservationList({ reservation, date, formatTime }) {
   let formattedHours = Number(formattedTime.slice(0,2)) > 12 ? Number(formattedTime.slice(0,2) % 12) : Number(formattedTime.slice(0,2));
   formattedTime = `${formattedHours}${formattedTime.slice(2)}`;
   
-  return (
+  const reservationCard = (
     <div className="card bg-light mb-3">
       <div className="card-header">Reservation for {formattedTime} {new Date(`${reservation_date} ${reservation_time}`).getHours() < 12 ? "AM" : "PM"}</div>
       <div className="card-body">
@@ -20,6 +20,8 @@ function ReservationList({ reservation, date, formatTime }) {
       </div>
     </div>
   );
+
+  return reservationCard
 }
 
 export default ReservationList;
