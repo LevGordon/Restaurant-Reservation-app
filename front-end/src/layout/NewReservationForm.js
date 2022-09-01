@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom"
-const {REACT_APP_API_BASE_URL} = process.env;
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import ErrorAlert from "./ErrorAlert";
+
+const { REACT_APP_API_BASE_URL } = process.env;
 
 function NewReservations() {
-
   const initialFormState = {
     first_name: "",
     last_name: "",
@@ -14,46 +15,57 @@ function NewReservations() {
   };
 
   const [formData, setFormData] = useState({ ...initialFormState });
+  const [error, setError] = useState(undefined);
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
-  const history = useHistory()
+  useEffect(() => {
+    const abortController = new AbortController();
+    setErrorMessage(error);
+    return () => abortController.abort();
+  }, [error]);
+
+  const history = useHistory();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formData)
-    const response = await fetch(
-        `${REACT_APP_API_BASE_URL}/reservations`,
-        {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json'
-              },
-            body: JSON.stringify({
-                data: formData,
-            })
-        }
-    );
+    console.log(formData);
+    const response = await fetch(`${REACT_APP_API_BASE_URL}/reservations`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        data: formData,
+      }),
+    });
     const resData = await response.json();
     console.log(resData);
-    setFormData({ ...initialFormState });
-    // history.push(`/reservations`)
-  }
+    if (resData.error) {
+      setError(resData.error);
+    }
+    console.log(resData.error);
+    if (response.status !== 400) {
+      setFormData({ ...initialFormState });
+      history.goBack();
+      // history.push(`/dashboard?date=${formData.reservation_date}`)
+    }
+  };
 
   const handleCancel = () => {
-    setFormData({ ...initialFormState })
-    history.goBack()
-  }
+    setFormData({ ...initialFormState });
+    history.goBack();
+  };
 
   const handleInputChange = (event) => {
-          setFormData({
-      ...initialFormState, ...formData,
+    setFormData({
+      ...initialFormState,
+      ...formData,
       [event.target.name]: event.target.value,
-    })
-    
-  }
+    });
+  };
 
   const formElement = (
     <form className="form" onSubmit={handleSubmit}>
-      
       <label htmlFor="first_name">
         first name:
         <input
@@ -126,12 +138,24 @@ function NewReservations() {
           required
         />
       </label>
-      <button type="button" onClick={handleCancel} > Cancel </button>
+      <button type="button" onClick={handleCancel}>
+        {" "}
+        Cancel{" "}
+      </button>
       <button type="submit"> Submit </button>
     </form>
   );
 
-  return formElement;
+  return (
+    <div>
+      {error ? <ErrorAlert errorMessage={errorMessage}/> : <></>}
+      <div className="form-group">
+      {formElement}
+      </div>
+    </div>
+    
+
+  )
 }
 
 export default NewReservations;

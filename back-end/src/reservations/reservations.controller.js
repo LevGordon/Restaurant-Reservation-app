@@ -7,15 +7,32 @@ async function list(req, res) {
   res.json({ data });
 }
 
-// async function reservationExists(req, res, next) {
-//   const { reservationDate } = req.params;
-//   const reservation = await service.read(reservationDate);
-//   if (reservation) {
-//     res.locals.reservation = reservation;
-//     return next();
-//   }
-//   return next({ status: 404, message: `Comment cannot be found.` });
-// }
+function reservationIsInFuture(req, res, next) {
+  const { reservation_date, reservation_time } = req.body.data;
+  const todaysDate = new Date();
+  const submittedDate = new Date(`${reservation_time} ${reservation_date}`);
+  if (submittedDate < todaysDate) {
+    return next({
+      status: 400,
+      message: `Reservations must be placed in the future.`
+    })
+  }
+  next();
+}
+
+// getDay returns a num 0-6 where 0 is Monday, 6 is Sunday
+//validation check for 1 --> Tuesday
+function isTuesday(req, res, next) {
+  const { reservation_date } = req.body.data;
+  const dayNum = new Date(reservation_date).getDay();
+  if (dayNum === 1) {
+    return next({
+      status: 400,
+      message: `Sorry! We're closed on Tuesdays!`
+    })
+  }
+  next();
+}
 
 // VALIDATION PIPELINE
 const VALID_PROPERTIES = [
@@ -79,6 +96,8 @@ module.exports = {
   create: [
     hasRequiredFields,
     hasOnlyValidProperties,
+    reservationIsInFuture,
+    isTuesday,
     asyncErrorBoundary(create),
   ],
 };
