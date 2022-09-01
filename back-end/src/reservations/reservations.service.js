@@ -8,7 +8,7 @@ async function create(reservation) {
 }
 
 function list(date) {
-    return knex("reservations").select("*").where({"reservations.reservation_date" : date}).orderBy("reservation.reservation_time")
+    return knex("reservations").select("*").where({"reservations.reservation_date" : date}).orderBy("reservations.reservation_time")
    } 
 
 

@@ -10,7 +10,7 @@ function NewReservations() {
     mobile_number: "",
     reservation_date: "",
     reservation_time: "",
-    people: 0,
+    people: 1,
   };
 
   const [formData, setFormData] = useState({ ...initialFormState });
@@ -35,6 +35,7 @@ function NewReservations() {
     const resData = await response.json();
     console.log(resData);
     setFormData({ ...initialFormState });
+    // history.push(`/reservations`)
   }
 
   const handleCancel = () => {
@@ -83,6 +84,7 @@ function NewReservations() {
           type="text"
           name="mobile_number"
           id="mobile_number"
+          placeholder="xxx-xxx-xxxx"
           onChange={handleInputChange}
           value={formData.mobile_number}
           required
@@ -92,7 +94,7 @@ function NewReservations() {
       <label htmlFor="reservation_date">
         reservation date:
         <input
-          type="text"
+          type="date"
           name="reservation_date"
           id="reservation_date"
           onChange={handleInputChange}
@@ -104,7 +106,7 @@ function NewReservations() {
       <label htmlFor="reservation_time">
         reservation time:
         <input
-          type="text"
+          type="time"
           name="reservation_time"
           id="reservation_time"
           onChange={handleInputChange}
