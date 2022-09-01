@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import { listReservations } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
 import ReservationList from "./ReservationsList";
-import { formatAsTime, previous, next, today as todayFn } from "../utils/date-time";
+import { formatAsTime, previous, next, today } from "../utils/date-time";
 
 /**
  * Defines the dashboard page.
@@ -14,6 +14,8 @@ import { formatAsTime, previous, next, today as todayFn } from "../utils/date-ti
 function Dashboard({ date }) {
   const [reservations, setReservations] = useState([]);
   const [reservationsError, setReservationsError] = useState(null);
+
+  const history = useHistory()
 
   // searches URL query, finds "date" and skips 5 characters. Then the result is sliced out of the query and later formatted.
   const urlQuery = useLocation().search;
@@ -40,6 +42,22 @@ function Dashboard({ date }) {
     />
   ));
 
+  const previousHandler = () => {
+    const previousDate = previous(date);
+    history.push(`/dashboard?date=${previousDate}`)
+  }
+
+  const nextHandler = () => {
+    const nextDate = next(date);
+    history.push(`/dashboard?date=${nextDate}`)
+  }
+
+  const todayHandler = () => {
+    const todayDate = today();
+    history.push(`/dashboard?date=${todayDate}`)
+  }
+
+
   return (
     <main>
       <div className="row d-flex flex-column">
@@ -54,13 +72,13 @@ function Dashboard({ date }) {
         </div>
       </div>
       <div className="row justify-content-around my-3">
-        <button type="button" name="previous-btn" className="ml-auto" onClick={()=> (previous(date))}>
+        <button type="button" name="previous-btn" className="ml-auto" onClick={previousHandler}>
           Previous
         </button>
-        <button type="button" name="next-btn" className="mx-3" onClick={()=> (next(date))}>
+        <button type="button" name="next-btn" className="mx-3" onClick={nextHandler}>
           Next
         </button>
-        <button type="button" name="today" className="mr-auto" onClick={()=> (todayFn())}>
+        <button type="button" name="today" className="mr-auto" onClick={todayHandler}>
           Today
         </button>
       </div>
