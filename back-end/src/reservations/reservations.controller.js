@@ -91,13 +91,51 @@ async function create(req, res, next) {
   res.status(201).json({ data });
 }
 
+function dateValidator(req, res, next) {
+  const { data = {} } = req.body;
+  if (!data["reservation_date"].match(/\d{4}-\d{2}-\d{2}/)) {
+    return next({
+      status: 400,
+      message: `invalid reservation_date`,
+    });
+  }
+  next();
+}
+
+function timeValidator(req,res,next) {
+  const { data = {} } = req.body;
+  if (!data["reservation_time"].match(/[0-9]{2}:[0-9]{2}/)) {
+    return next({
+      status: 400,
+      message: `invalid reservation_time `,
+    });
+  }
+  next();
+}
+
+function reservationWithinOperatingHours(req,res,next) {
+  const { data = {} } = req.body;
+  let submittedTime =data["reservation_time"].replace(":", "");
+  if (submittedTime<1030 || submittedTime>2130) {
+    next({
+      status: 400,
+      message: "Reservation must be within business hours and at least an hour before close",
+    });
+  }
+  next();
+}
+
+
 module.exports = {
   list,
   create: [
     hasRequiredFields,
     hasOnlyValidProperties,
+    dateValidator,
+     timeValidator,
     reservationIsInFuture,
     isTuesday,
+    reservationWithinOperatingHours,
     asyncErrorBoundary(create),
   ],
 };
