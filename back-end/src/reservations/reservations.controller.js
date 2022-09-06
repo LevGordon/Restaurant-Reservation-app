@@ -113,6 +113,17 @@ function timeValidator(req,res,next) {
   next();
 }
 
+function peopleIsNumber(req, res, next) {
+  const { data = {} } = req.body;
+  if (typeof data["people"] != "number") {
+    return next({
+      status: 400,
+      message: `"people" field must be a number `,
+    });
+  }
+  next();
+}
+
 function reservationWithinOperatingHours(req,res,next) {
   const { data = {} } = req.body;
   let submittedTime =data["reservation_time"].replace(":", "");
@@ -132,8 +143,9 @@ module.exports = {
     hasRequiredFields,
     hasOnlyValidProperties,
     dateValidator,
-     timeValidator,
+    timeValidator,
     reservationIsInFuture,
+    peopleIsNumber,
     isTuesday,
     reservationWithinOperatingHours,
     asyncErrorBoundary(create),

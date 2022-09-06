@@ -57,9 +57,8 @@ function NewReservations() {
 
   const handleInputChange = (event) => {
     setFormData({
-      ...initialFormState,
       ...formData,
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.name === "people" ? Number(event.target.value) : event.target.value
     });
   };
 

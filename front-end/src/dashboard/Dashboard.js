@@ -15,11 +15,13 @@ function Dashboard({ date }) {
   const [reservations, setReservations] = useState([]);
   const [reservationsError, setReservationsError] = useState(null);
 
-  const history = useHistory()
+
+
+  const history = useHistory();
 
   // searches URL query, finds "date" and skips 5 characters. Then the result is sliced out of the query and later formatted.
   const urlQuery = useLocation().search;
-  const dateQueryStart = (urlQuery.search("date") + 5);
+  const dateQueryStart = urlQuery.search("date") + 5;
   date = urlQuery.slice(dateQueryStart, dateQueryStart + 10) || date;
 
   useEffect(loadDashboard, [date]);
@@ -33,7 +35,7 @@ function Dashboard({ date }) {
     return () => abortController.abort();
   }
 
-  const reservationslist = reservations.map((reservation, index) => (
+  const reservationsMapped = reservations.map((reservation, index) => (
     <ReservationList
       key={index}
       reservation={reservation}
@@ -44,30 +46,30 @@ function Dashboard({ date }) {
 
   const previousHandler = () => {
     const previousDate = previous(date);
-    history.push(`/dashboard?date=${previousDate}`)
-  }
+    history.push(`/dashboard?date=${previousDate}`);
+  };
 
   const nextHandler = () => {
     const nextDate = next(date);
-    history.push(`/dashboard?date=${nextDate}`)
-  }
+    history.push(`/dashboard?date=${nextDate}`);
+  };
 
   const todayHandler = () => {
     const todayDate = today();
-    history.push(`/dashboard?date=${todayDate}`)
-  }
+    history.push(`/dashboard?date=${todayDate}`);
+  };
 
 
   const noReservationsMessage = (
     <div>
-      <h5>
-        There are no reservations on {date}
-      </h5>
+      <h5>There are no reservations on {date}</h5>
     </div>
-  )
+  );
 
-  return (
-    <main>
+
+  
+  const DashboardRender = (
+    <div>
       <div className="row d-flex flex-column">
         <h1
           className="col-12 d-flex flex-wrap"
@@ -79,22 +81,46 @@ function Dashboard({ date }) {
           <h4 className="mb-0">Reservations for {date}</h4>
         </div>
       </div>
+
       <div className="row justify-content-around my-3">
-        <button type="button" name="previous-btn" className="ml-auto" onClick={previousHandler}>
+        <button
+          type="button"
+          name="previous-btn"
+          className="ml-auto"
+          onClick={previousHandler}
+        >
           Previous
         </button>
-        <button type="button" name="next-btn" className="mx-3" onClick={nextHandler}>
+        <button
+          type="button"
+          name="next-btn"
+          className="mx-3"
+          onClick={nextHandler}
+        >
           Next
         </button>
-        <button type="button" name="today" className="mr-auto" onClick={todayHandler}>
+        <button
+          type="button"
+          name="today"
+          className="mr-auto"
+          onClick={todayHandler}
+        >
           Today
         </button>
       </div>
-      {reservationsError ? <ErrorAlert error={reservationsError}/> : <></>}
+
+      {reservationsError ? <ErrorAlert error={reservationsError} /> : <></>}
       <hr />
-      <div className="row">{reservationslist ? reservationslist : noReservationsMessage }</div>
-    </main>
+      <div className="row">
+        {reservations.length >= 1 ? reservationsMapped : noReservationsMessage}{" "}
+      </div>
+    </div>
   );
+
+  return (
+    <main>
+      {DashboardRender}
+    </main>);
 }
 
 export default Dashboard;
