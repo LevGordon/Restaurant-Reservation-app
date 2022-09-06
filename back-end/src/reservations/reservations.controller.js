@@ -62,7 +62,7 @@ function hasRequiredFields(req, res, next) {
 }
 
 function hasOnlyValidProperties(req, res, next) {
-  const { data = {} } = req.body;
+  const { data = {} } = req.body.data;
 
   const invalidFields = Object.keys(data).filter((field) => {
     console.log(field);
