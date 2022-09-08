@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router";
-import { listReservations } from "../utils/api";
+import { listReservations, listTables } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
 import ReservationList from "./ReservationsList";
 import { formatAsTime, previous, next, today } from "../utils/date-time";
+import TableList from "./TableList";
 
 /**
  * Defines the dashboard page.
@@ -14,6 +15,7 @@ import { formatAsTime, previous, next, today } from "../utils/date-time";
 function Dashboard({ date }) {
   const [reservations, setReservations] = useState([]);
   const [reservationsError, setReservationsError] = useState(null);
+  const [tables, setTables] = useState([])
 
 
 
@@ -32,6 +34,10 @@ function Dashboard({ date }) {
     listReservations({ date }, abortController.signal)
       .then(setReservations)
       .catch(setReservationsError);
+
+      listTables(abortController.signal)
+      .then(setTables)
+      .catch(setReservationsError); // errors fetching tables adds to reservationsError array
     return () => abortController.abort();
   }
 
@@ -42,6 +48,10 @@ function Dashboard({ date }) {
       date={date}
       formatTime={formatAsTime}
     />
+  ));
+
+  const tablesMapped = tables.map((table, index) => (
+    <TableList key={index} table={table} setError={setReservationsError} />
   ));
 
   const previousHandler = () => {
@@ -114,6 +124,12 @@ function Dashboard({ date }) {
       <div className="row">
         {reservations.length >= 1 ? reservationsMapped : noReservationsMessage}{" "}
       </div>
+
+      <br />
+
+        <div className="col d-flex flex-wrap">
+          {tablesMapped.length === 0 ? <h3>No Tables Listed</h3> : tablesMapped}
+        </div>
     </div>
   );
 
