@@ -18,6 +18,16 @@ function ReservationList({ reservation, date, formatTime }) {
         <h6>Number of Guests:</h6>
         <p className="card-text">{people}</p>
       </div>
+      <div className="d-flex justify-content-end">
+          <button type="button" className="btn btn-secondary px-4 mr-4">
+            <a
+              className="text-light"
+              href={`/reservations/${reservation.reservation_id}/seat`}
+            >
+              Seat
+            </a>
+          </button>
+        </div>
     </div>
   );
 
