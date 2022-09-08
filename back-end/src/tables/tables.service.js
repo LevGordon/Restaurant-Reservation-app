@@ -34,7 +34,7 @@ async function update(newTableData) {
         .where({table_id: newTableData.table_id})
         .update({
             reservation_id: newTableData.reservation_id,
-            status: "Occupied"
+            is_free: false
         }, "*");
 }
 
@@ -44,7 +44,7 @@ async function destroy(table_id) {
         .where({table_id: table_id})
         .update({
             reservation_id: null,
-            status: "Free" 
+            is_free: true 
         });
 }
 

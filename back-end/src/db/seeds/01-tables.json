@@ -7,7 +7,7 @@
     {
         "table_name": "Bar #2",
         "capacity": 1,
-        "is_free": false
+        "is_free": true
     },
     {
         "table_name": "#1",
