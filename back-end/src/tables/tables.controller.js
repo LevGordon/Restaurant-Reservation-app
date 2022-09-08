@@ -81,7 +81,7 @@ async function tableExists(req, res, next) {
 
 function tableIsAvailable(req, res, next) {
   const table = res.locals.table;
-  if (table.is_free === false) {
+  if (table.reservation_id) {
     return next({
       status: 400,
       message: `Reservation cannot be seated. Table is occupied.`,
@@ -92,7 +92,7 @@ function tableIsAvailable(req, res, next) {
 
 function tableNotAvailable(req, res, next) {
   const table = res.locals.table
-  if(table.is_free) {
+  if(!table.reservation_id) {
     return next({
       status: 400,
       message: `Table is not occupied`
