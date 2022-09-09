@@ -33,8 +33,7 @@ async function update(newTableData) {
         .select("*")
         .where({table_id: newTableData.table_id})
         .update({
-            reservation_id: newTableData.reservation_id,
-            is_free: false
+            reservation_id: newTableData.reservation_id
         }, "*");
 }
 
@@ -43,8 +42,7 @@ async function destroy(table_id) {
         .select("*")
         .where({table_id: table_id})
         .update({
-            reservation_id: null,
-            is_free: true 
+            reservation_id: null
         });
 }
 

@@ -121,7 +121,7 @@ async function reservationExists(req, res, next) {
 
   next({
     status: 404,
-    message: `Reservation ${reservation_id} cannot be found.`,
+    message: `Reservation "${reservation_id}" cannot be found.`,
   });
 }
 
@@ -131,7 +131,7 @@ function tableHasCapacity(req, res, next) {
   if (people > table.capacity) {
     return next({
       status: 400,
-      message: `Table ${table.table_name} does not have a capacity of ${people} people.`,
+      message: `Table "${table.table_name}" does not have enough capacity for ${people} people.`,
     });
   }
   next();

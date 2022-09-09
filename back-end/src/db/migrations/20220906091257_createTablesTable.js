@@ -3,7 +3,6 @@ exports.up = function(knex) {
     table.increments("table_id").primary();
     table.integer("capacity");
     table.string("table_name");
-    table.boolean("is_free").defaultTo(true)
     table.integer("reservation_id").defaultTo(null);
     table
       .foreign("reservation_id")
