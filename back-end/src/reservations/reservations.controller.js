@@ -150,6 +150,47 @@ function reservationWithinOperatingHours(req,res,next) {
   next();
 }
 
+function reservationStatus(req, res, next) {
+  const { status } = req.body.data;
+  if (status === "seated" || status === "finished" || status === "unknown") {
+    return next({
+      status: 400,
+      message: `Error: Reservation status cannot be booked. Status is: ${status}`
+    })
+  }
+  next();
+}
+
+function unknownStatus(req, res, next) {
+  const { data = {} } = req.body;
+  if (data["status"] === "unknown") {
+    return next({
+      status: 400,
+      message: `unknown status`
+    })
+  }
+  next();
+}
+
+function isValueFinished(req, res, next) {
+  if (res.locals.reservation.status === "finished") {
+    return next({
+      status: 400,
+      message: `a finished reservation cannot be updated`
+    })
+  }
+  next();
+}
+
+async function update(req, res, next) {
+  const newReservation = {
+    ...req.body.data,
+    reservation_id: res.locals.reservation.reservation_id,
+  };
+  const data = await service.update(res.locals.reservation.reservation_id);
+  res.status(200).json({ data: newReservation });
+}
+
 module.exports = {
   list,
   create: [
@@ -161,7 +202,9 @@ module.exports = {
     peopleIsNumber,
     isTuesday,
     reservationWithinOperatingHours,
+    reservationStatus,
     asyncErrorBoundary(create),
   ],
   read: [reservationExists, asyncErrorBoundary(read)],
+  update: [asyncErrorBoundary(reservationExists), unknownStatus, isValueFinished, asyncErrorBoundary(update)]
 };
