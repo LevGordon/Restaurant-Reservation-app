@@ -43,7 +43,7 @@ function hasValidFieldInputs(req, res, next) {
   if (capacity <= 0 || typeof capacity !== "number") {
     return next({
       status: 400,
-      message: `Table capacity must be at least one. You entered: ${capacity}.`,
+      message: `There must be more than one person per table. You entered capacity of: ${capacity}.`,
     });
   }
 
@@ -96,7 +96,7 @@ function tableIsOccupied(req, res, next) {
   if (table.reservation_id === null) {
     return next({
       status: 400,
-      message: `Error: Table ${table.table_name} is not occupied and therefore cannot be cleared.`
+      message: `Error: Table ${table.table_name} is already cleared.`
     })
   }
   next();

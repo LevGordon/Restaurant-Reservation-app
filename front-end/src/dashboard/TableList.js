@@ -38,17 +38,42 @@ function TableList({ table, loadDashboard }) {
   }
 
   return (
-    <div className="card mx-3" id="tables-list">
-    <div className="card-header">
-      Table: {table_name}
+    <div id="whole-card" className="mx-3">
+      <div className="row d-flex justify-content-center">
+        <h4 id="table-name">Table: {table_name}</h4>
+      </div>
+      <ul>
+        <div className="row d-flex justify-content-around">
+          <li id="table-info">
+            <span className="col">Capacity: </span><span className="col" id="table-info-value">{capacity}</span>
+          </li>
+        </div>
+        <div className="row d-flex justify-content-around">
+          <li id="table-info" data-table-id-status={table.table_id}>
+          <span className="col">Status: </span>
+            <span id="table-info-value">
+              {reservation_id ? "Occupied" : "Free"}
+            </span>
+          </li>
+        </div>
+      </ul>
+      <div className="d-flex justify-content-center">
+        {reservation_id ? (
+          <button
+            type="button"
+            id="finish-btn"
+            className="btn btn-primary"
+            data-table-id-finish={table.table_id}
+            onClick={finishBtnHandler}
+          >
+            Finish
+          </button>
+        ) : (
+          <></>
+        )}
+      </div>
     </div>
-    <ul className="list-group list-group-flush">
-      <li className="list-group-item second-background-color">Capacity: {capacity}</li>
-      <li className="list-group-item second-background-color" data-table-id-status={table.table_id}>{!reservation_id ? "Free" : "occupied"}</li>
-    </ul>
-    {reservation_id ? <button type="button" onClick={finishBtnHandler} className="btn btn-primary" data-table-id-finish={table.table_id}>Finish</button> : <></>}
-  </div>
-)
+  );
 }
 
 export default TableList;
