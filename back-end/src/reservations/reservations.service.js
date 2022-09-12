@@ -4,12 +4,20 @@ async function list(date) {
     return knex("reservations")
         .select("*")
         .where({
-            "reservation_date": date,
-            status: "seated",
-            status: "booked",
+            "reservation_date": date
         })
+        .whereNot({"status" : "finished"})
         .orderBy("reservation_time")
 }
+
+function search(mobile_number) {
+    return knex("reservations")
+      .whereRaw(
+        "translate(mobile_number, '() -', '') like ?",
+        `%${mobile_number.replace(/\D/g, "")}%`
+      )
+      .orderBy("reservation_date");
+  }
 
 async function create(reservation) {
     return knex("reservations")
@@ -34,6 +42,7 @@ async function update(reservation_id) {
 
 module.exports = {
     list,
+    search,
     create,
     read,
     update,

@@ -85,7 +85,7 @@ function tableIsAvailable(req, res, next) {
   if (table.reservation_id) {
     return next({
       status: 400,
-      message: `Reservation cannot be seated. Table is occupied.`,
+      message: `Reservation cannot be seated. Table is occupied. Capacity full.`,
     });
   }
   next();
@@ -93,10 +93,10 @@ function tableIsAvailable(req, res, next) {
 
 function tableIsOccupied(req, res, next) {
   const table = res.locals.table;
-  if (table.reservation_id === null) {
+  if (!table.reservation_id) {
     return next({
       status: 400,
-      message: `Error: Table ${table.table_name} is already cleared.`
+      message: `Error: Table ${table.table_name} is not occupied. Current capacity: 0`
     })
   }
   next();
@@ -128,7 +128,8 @@ async function reservationExists(req, res, next) {
 
 function tableHasCapacity(req, res, next) {
   const table = res.locals.table;
-  const people = res.locals.people;
+  const people = res.locals.reservation.people;
+  console.log("table & people", table, people)
   if (people > table.capacity) {
     return next({
       status: 400,
@@ -166,10 +167,7 @@ async function update(req, res, next) {
 
 async function destroy(req, res, next) {
   const table = res.locals.table;
-  const reservation = res.locals.reservation;
-  console.log(reservation)
-  console.log(reservation.reservation_id)
-  await service.updateReservation(reservation.reservation_id);
+  await service.updateReservation(table.reservation_id);
   await service.delete(table.table_id);
   res.sendStatus(200);
 }
@@ -185,5 +183,5 @@ module.exports = {
     reservationStatus,
     asyncErrorBoundary(update),
   ],
-  delete: [asyncErrorBoundary(tableExists), asyncErrorBoundary(reservationExists), tableIsOccupied, asyncErrorBoundary(destroy)],
+  delete: [asyncErrorBoundary(tableExists), tableIsOccupied, asyncErrorBoundary(destroy)],
 };
