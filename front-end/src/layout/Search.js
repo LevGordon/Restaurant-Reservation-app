@@ -52,6 +52,7 @@ function Search() {
       <form onSubmit={submitHandler}>
         <label htmlFor="mobile_number">Search</label>
         <input
+          required
           name="mobile_number"
           id="mobile_number"
           onChange={changeHandler}
@@ -59,7 +60,7 @@ function Search() {
         ></input>
         <button type="submit">Find</button>
       </form>
-      <div>{reservationsList.length === 0 ? <></> : reservationsList}</div>
+      <div>{reservationsList.length === 0 ? <> "No reservations found" </> : reservationsList}</div>
     </div>
   );
 }
