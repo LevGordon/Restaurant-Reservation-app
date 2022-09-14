@@ -63,14 +63,19 @@ function ReservationList({ reservation, formatTime }) {
         <p id="card-text">{people}</p>
       </div>
       <div className="d-flex justify-content-end">
-        {status === "Booked" ? (<button type="button" className="btn btn-secondary px-4 mr-4"><a className="text-light" href={`/reservations/${reservation_id}/seat`}>Seat</a></button>) : <></>}
-        <button type="button" className="colorfulBtn">{status === "Booked" ? <a className="text-dark" href={`/reservations/${reservation_id}/edit`}>Edit</a> : null}</button>
-        <button type="button" className="colorfulBtn" data-reservation-id-cancel={reservation.reservation_id} onClick={cancelHandler}>{status === "Booked" ? <div> Cancel </div> : null} </button>
+      {status === "Booked" ? <button type="button"  className="colorfulBtn"> <a className="text-dark" href={`/reservations/${reservation_id}/seat`}>Seat</a></button> : null}
+        {status === "Booked" ? <button type="button" className="colorfulBtn"> <a className="text-dark" href={`/reservations/${reservation_id}/edit`}>Edit</a> </button> : null}
+        {status === "Booked" ? <button type="button" className="colorfulBtn" data-reservation-id-cancel={reservation.reservation_id} onClick={cancelHandler}> <div> Cancel </div> </button> : null}
       </div>
     </div>
   );
 
-  return reservationCard
+
+
+  if (reservation.status !== "cancelled") {
+    return (
+      reservationCard
+    )} else {return null}  
 }
 
 export default ReservationList;
