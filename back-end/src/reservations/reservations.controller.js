@@ -61,13 +61,11 @@ function hasOnlyValidProperties(req, res, next) {
   const { data = {} } = req.body.data;
 
   const invalidFields = Object.keys(data).filter((field) => {
-    console.log(field);
     if (field === "people") {
       return typeof field.value === "number"
     }
     return typeof field.value === "string"
   });
-  console.log(invalidFields);
   if (invalidFields.length) {
     return next({
       status: 400,
