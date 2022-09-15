@@ -1,4 +1,7 @@
 .side-bar {
-  background-color: black;
   min-width: 200px;
+  background: black;
+  background: linear-gradient(14deg, black 0%, rgb(27, 24, 0) 45%, black 100%);
+      
 }
+

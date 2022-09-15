@@ -1,3 +1,13 @@
-/* .background {
-    background-image: url('/front-end/public/photos/background.jpg') center no-repeat;
-} */
+.background {
+    background: rgb(2,0,36);
+    background: linear-gradient(344deg, rgba(2,0,36,1) 0%, rgb(127, 108, 0) 45%, rgba(0,0,0,1) 100%);
+}
+
+#main-banner {
+    background: black;
+background: linear-gradient(14deg, black 0%, rgb(27, 24, 0) 45%, black 100%); 
+}
+
+h3 {
+    color: whitesmoke;
+}
