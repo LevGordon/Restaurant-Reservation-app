@@ -10,6 +10,7 @@
     font-size: 45px;
     width: fit-content;
     margin-left: 10px;
+    margin-top: 5px;
     padding: 1rem 2.5rem;
     z-index: 1;
 }
@@ -27,5 +28,19 @@
 
 .nav-item:active {
     background-color: lightgoldenrodyellow;
+    transition: all 0.1s ease-in;
+}
+
+.logo {
+    border: 1px solid gold;
+}
+
+.logo:hover {
+    border: 2px solid goldenrod;
+    transition: all 0.55s ease-in-out;
+}
+
+.logo:active {
+    background-color: lightgray;
     transition: all 0.1s ease-in;
 }

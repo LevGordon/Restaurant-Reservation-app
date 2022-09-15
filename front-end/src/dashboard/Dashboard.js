@@ -103,6 +103,7 @@ function Dashboard({ date }) {
 
   return (
     <main>
+      <div className="background">
       <div id="main-banner" className="row">
         {reservationsError ? (
           <ErrorAlert errorMessage={reservationsError} />
@@ -166,6 +167,7 @@ function Dashboard({ date }) {
         <div className="col d-flex flex-wrap">
           {tablesList.length === 0 ? <h3>No Tables Listed</h3> : tablesList}
         </div>
+      </div>
       </div>
     </main>
   );

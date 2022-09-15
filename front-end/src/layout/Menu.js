@@ -13,7 +13,7 @@ function Menu() {
         <div id="background-container" className="row d-flex justify-content-between side-bar">
         <Link to="/">
           <div className="col d-flex flex-wrap">
-            <span id="logo">Periodic Tables</span>
+            <span id="logo" className="logo">Periodic Tables</span>
           </div>
         </Link>
         <nav id="nav" className="row align-items-center">
