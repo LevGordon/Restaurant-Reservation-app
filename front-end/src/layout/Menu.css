@@ -1,0 +1,31 @@
+#background-container {
+    width: stretch;
+    height: 7rem;
+    border-bottom: black solid 2px;
+}
+
+#logo {
+    color: white;
+    font-family: 'Satisfy', cursive;
+    font-size: 45px;
+    width: fit-content;
+    margin-left: 10px;
+    padding: 1rem 2.5rem;
+    z-index: 1;
+}
+
+#nav {
+    height:6.5rem;
+    z-index: 2;
+}
+
+.nav-item:hover {
+    border: 1px solid gold;
+    transition: all 0.55s ease-in-out;
+    
+}
+
+.nav-item:active {
+    background-color: lightgoldenrodyellow;
+    transition: all 0.1s ease-in;
+}

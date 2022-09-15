@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import ErrorAlert from "./ErrorAlert";
-import loadDashboard from "../dashboard/Dashboard"
 
 const { REACT_APP_API_BASE_URL } = process.env;
 
@@ -84,11 +83,10 @@ function EditReservation() {
         }
     }
   
-    // currently, ErrorAlert will only display one error message at a time
-    // with "Reservations must be place in the future" taking priority
-    // needs to be set up so there multiple form valiations will result in multiple messages
+
     return (
       <div>
+        {error ? <ErrorAlert errorMessage={errorMessage}/> : <></>}
       <div className="form-group">
         <form onSubmit={submitHandler}>
           <label htmlFor="first_name">First Name</label>
