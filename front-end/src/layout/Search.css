@@ -6,7 +6,7 @@
 label {
     color: whitesmoke;
     font-size: 28px;
-    padding: 15px;
+    padding: 10px;
 }
 
 input {
@@ -19,6 +19,10 @@ button {
 }
 
 form {
-    margin-bottom: 10%;
     margin-top: 5%;
+}
+
+h3 {
+    margin-bottom: 25px;
+    margin-top: 3%;
 }

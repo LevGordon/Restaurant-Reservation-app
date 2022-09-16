@@ -53,7 +53,7 @@ function Search() {
   });
 
   return (
-    <div className="row d-flex justify-content-center" id="background">
+    <div className="column" id="background">
       <div>
         {reservationsError ? (
           <ErrorAlert errorMessage={reservationsError} />
@@ -61,19 +61,23 @@ function Search() {
           <></>
         )}
       </div>
-      <form onSubmit={submitHandler}>
-        <label htmlFor="mobile_number">Search:</label>
-        <input
-          required
-          name="mobile_number"
-          id="mobile_number"
-          onChange={changeHandler}
-          placeholder="Enter a customer's phone number"
-        ></input>
-        <button type="submit">Find</button>
-      </form>
+      <div className="row d-flex justify-content-center">
+        <form onSubmit={submitHandler}>
+          <label htmlFor="mobile_number">Search:</label>
+          <input
+            required
+            name="mobile_number"
+            id="mobile_number"
+            onChange={changeHandler}
+            placeholder="Enter a customer's phone number"
+          ></input>
+          <button type="submit">Find</button>
+        </form>
+      </div>
       <div>
+        <div className="row d-flex justify-content-center">
         {reservationsList.length === 0 ? <h3>Enter phone number above to see associated reservations.</h3> : <h3>Showing reservations for {formState} </h3>}
+        </div>
         <div className="row d-flex justify-content-center">
           {reservationsList.length === 0 ? (
             <h3>{altMessage}</h3>
