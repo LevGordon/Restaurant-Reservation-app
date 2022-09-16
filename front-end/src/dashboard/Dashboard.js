@@ -151,7 +151,7 @@ function Dashboard({ date }) {
         <hr className="col-12" />
       </div>
 
-      <div className="row">
+      <div className="row" id='background'>
         <div className="col col-7 d-flex flex-wrap" id="reservations">
           {reservationsList.length === 0 ? (
             <div id="no-reservations">

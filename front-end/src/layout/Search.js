@@ -3,13 +3,15 @@ import ErrorAlert from "./ErrorAlert";
 import ReservationList from "../dashboard/ReservationsList";
 import { formatAsTime } from "../utils/date-time";
 
+import "./Search.css";
+
 const { REACT_APP_API_BASE_URL } = process.env;
 
 function Search() {
   const [formState, setFormState] = useState("");
   const [reservations, setReservations] = useState([]);
   const [reservationsError, setReservationsError] = useState(null);
-  const [altMessage, setAltMessage] = useState("")
+  const [altMessage, setAltMessage] = useState("");
 
   function changeHandler({ target }) {
     setFormState(target.value);
@@ -27,16 +29,16 @@ function Search() {
       }
     );
     const resData = await response.json();
-    console.log(resData)
-    console.log(resData.data.length)
+    console.log(resData);
+    console.log(resData.data.length);
     if (resData.data.length === 0) {
       setAltMessage("No reservations found.");
     }
     if (response.status !== 400) {
-        setReservations(resData.data);
+      setReservations(resData.data);
     }
     if (resData.error) {
-        setReservationsError(resData.error)
+      setReservationsError(resData.error);
     }
   }
 
@@ -51,10 +53,16 @@ function Search() {
   });
 
   return (
-    <div>
-        <div>{reservationsError ? <ErrorAlert errorMessage={reservationsError} /> : <></>}</div>
+    <div className="row d-flex justify-content-center" id="background">
+      <div>
+        {reservationsError ? (
+          <ErrorAlert errorMessage={reservationsError} />
+        ) : (
+          <></>
+        )}
+      </div>
       <form onSubmit={submitHandler}>
-        <label htmlFor="mobile_number">Search</label>
+        <label htmlFor="mobile_number">Search:</label>
         <input
           required
           name="mobile_number"
@@ -64,7 +72,17 @@ function Search() {
         ></input>
         <button type="submit">Find</button>
       </form>
-      <div>{reservationsList.length === 0 ? <h3>{altMessage}</h3> : reservationsList}</div>
+      <div>
+        {reservationsList.length === 0 ? <h3>Enter phone number above to see associated reservations.</h3> : <h3>Showing reservations for {formState} </h3>}
+        <div className="row d-flex justify-content-center">
+          {reservationsList.length === 0 ? (
+            <h3>{altMessage}</h3>
+          ) : (
+            reservationsList
+          )}
+        </div>
+      </div>
+      
     </div>
   );
 }
