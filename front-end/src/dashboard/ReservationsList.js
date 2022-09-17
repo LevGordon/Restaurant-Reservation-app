@@ -59,8 +59,8 @@ function ReservationList({ reservation, formatTime }) {
         <p id="card-text">{people}</p>
       </div>
       <div className="d-flex justify-content-end">
-      {status === "Booked" ? <button type="button"  className="colorfulBtn"> <a className="text-dark" href={`/reservations/${reservation_id}/seat`}>Seat</a></button> : null}
-        {status === "Booked" ? <button type="button" className="colorfulBtn"> <a className="text-dark" href={`/reservations/${reservation_id}/edit`}>Edit</a> </button> : null}
+      {status === "Booked" ? <button type="button"  className="colorfulBtn" onClick={() => history.push(`/reservations/${reservation_id}/seat`)}>Seat</button> : null}
+        {status === "Booked" ? <button type="button" className="colorfulBtn" onClick={() => history.push(`/reservations/${reservation_id}/edit`)}>Edit </button> : null}
         {status === "Booked" ? <button type="button" className="colorfulBtn" data-reservation-id-cancel={reservation.reservation_id} onClick={cancelHandler}> <div> Cancel </div> </button> : null}
       </div>
     </div>

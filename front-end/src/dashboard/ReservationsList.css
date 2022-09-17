@@ -21,6 +21,11 @@
 
 }
 
-button {
+.colorfulBtn, a {
     margin: 3px;
+    color: white;
+}
+
+.text-dark {
+    color: whitesmoke;
 }
