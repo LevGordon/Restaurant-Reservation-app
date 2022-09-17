@@ -44,7 +44,7 @@ function ReservationList({ reservation, formatTime }) {
         Reservation for {formattedTime}{" "}
         {new Date(`${reservation_date} ${reservation_time}`).getHours() < 12
           ? "AM"
-          : "PM"}
+          : "PM"} for {reservation_date.slice(0, 10)}
       </div>
       <div>
         <h6 id="card-label">Name:</h6>

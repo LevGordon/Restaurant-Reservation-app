@@ -20,6 +20,11 @@
     z-index: 2;
 }
 
+.nav-item {
+    border: 0.5px whitesmoke;
+
+}
+
 .nav-item:hover {
     border: 1px solid gold;
     transition: all 0.55s ease-in-out;
@@ -36,7 +41,7 @@
 }
 
 .logo:hover {
-    border: 3px solid goldenrod;
+    border: 1px solid goldenrod;
     transition: all 0.55s ease-in-out;
 }
 
