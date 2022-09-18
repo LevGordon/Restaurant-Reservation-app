@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import ErrorAlert from "../layout/ErrorAlert";
 
+import './TableForm.css'
+
 const { REACT_APP_API_BASE_URL } = process.env;
 
 function TableForm() {
@@ -47,7 +49,7 @@ function TableForm() {
   };
 
   return (
-    <div>
+    <div className="main-background">
     {error ? <ErrorAlert errorMessage={error}/> : <></>}
     <div className="form-group">
       <form onSubmit={submitHandler}>
@@ -75,14 +77,12 @@ function TableForm() {
           type="button"
           name="cancel-btn"
           onClick={cancelHandler}
-          className="btn btn-primary"
         >
           Cancel
         </button>
         <button
           type="submit"
           name="submit-btn"
-          className="btn btn-secondary"
         >
           Submit
         </button>
