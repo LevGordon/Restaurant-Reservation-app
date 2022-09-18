@@ -9,6 +9,10 @@ background: linear-gradient(14deg, black 0%, rgb(27, 24, 0) 45%, black 100%);
 }
 
 h3 {
-    color: whitesmoke;
+    color: gainsboro;
+}
+
+button {
+    border-radius: 5%;
 }
 
