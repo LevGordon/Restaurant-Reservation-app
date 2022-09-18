@@ -21,27 +21,26 @@
 
 .nav-item {
     border: 0.5px whitesmoke;
-
+    transition: all 0.55s ease-in;
 }
 
 .nav-item:hover {
     border: 1px solid gold;
-    transition: all 0.55s ease-in-out;
+    
     
 }
 
 .nav-item:active {
     background-color: lightgoldenrodyellow;
-    transition: all 0.1s ease-in;
+    transition: all 0.1s linear;
 }
 
 .logo {
-    border: 1px solid gold;
+    transition: all 0.55s ease-in;
 }
 
 .logo:hover {
-    border: 1px solid goldenrod;
-    transition: all 0.55s ease-in-out;
+    border: 1px solid gold;
 }
 
 .logo:active {
