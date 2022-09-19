@@ -3,10 +3,6 @@
 background: linear-gradient(14deg, black 0%, rgb(46, 41, 0) 45%, black 100%); 
 }
 
-#background {
-    background: rgb(2,0,36);
-    background: linear-gradient(344deg, rgba(2,0,36,1) 0%, rgb(80, 68, 0) 45%, rgba(0,0,0,1) 100%);
-}
 
 h3 {
     color: gainsboro;
