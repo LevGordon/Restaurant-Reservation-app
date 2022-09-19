@@ -39,6 +39,16 @@ function TableList({ table, loadDashboard }) {
     }
   }
 
+  const box = (color) => {
+    if(color === "red") {
+      return <div className='red-box'></div>
+    } else {
+      return <div className='green-box'></div>
+    }
+    
+  }
+
+
   return (
     <div id="whole-card" className="mx-3">
       <div className="row d-flex justify-content-center">
@@ -55,6 +65,7 @@ function TableList({ table, loadDashboard }) {
           <span className="col">Status: </span>
             <span id="table-info-value">
               {reservation_id ? "Occupied" : "Free"}
+              {reservation_id ? box("red") : box("green")}
             </span>
           </li>
         </div>
@@ -64,7 +75,6 @@ function TableList({ table, loadDashboard }) {
           <button
             type="button"
             id="finish-btn"
-            className="btn btn-primary"
             data-table-id-finish={table.table_id}
             onClick={finishBtnHandler}
           >

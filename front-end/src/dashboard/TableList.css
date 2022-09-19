@@ -21,3 +21,15 @@ span {
 li {
     margin-right: auto;
 }
+
+.red-box {
+    background-color: red;
+    padding: 1px;
+    border: 1px solid red;
+}
+
+.green-box {
+    background-color: green;
+    padding: 1px;
+    border: 1px solid green;
+}

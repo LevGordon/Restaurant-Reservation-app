@@ -20,7 +20,7 @@
 }
 
 .nav-item {
-    border: 0.5px whitesmoke;
+    border: 1px whitesmoke;
     border-radius: 3px;
     transition: all 0.55s ease-in;
 }
