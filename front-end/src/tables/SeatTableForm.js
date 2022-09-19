@@ -3,6 +3,8 @@ import { useHistory, useParams } from "react-router";
 import { listTables } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
 
+import './SeatTableForm.css'
+
 const { REACT_APP_API_BASE_URL } = process.env;
 
 
@@ -61,19 +63,18 @@ function SeatTableForm() {
       {error ? <ErrorAlert errorMessage={error}/> : <></>}
       <div className="form-group">
         <form onSubmit={submitHandler}>
-          <label htmlFor="table_id">Choose a table:</label>
+          <label htmlFor="table_id">Choose a table to seat the guests : </label>
           <select required id="select" name="table_id">
             {tableOptions}
           </select>
           <br />
           <button
             type="button"
-            className="btn btn-secondary"
             onClick={() => history.goBack()}
           >
             Cancel
           </button>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit">
             Submit
           </button>
         </form>

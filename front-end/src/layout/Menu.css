@@ -20,13 +20,13 @@
 }
 
 .nav-item {
-    border: 1px whitesmoke;
+    outline: 1px whitesmoke;
     border-radius: 3px;
     transition: all 0.55s ease-in;
 }
 
 .nav-item:hover {
-    border: 1px solid gold;
+    outline: 1px solid gold;
 }
 
 .nav-item:active {
@@ -40,7 +40,7 @@
 }
 
 .logo:hover {
-    border: 1px solid gold;
+    outline: 1px solid gold;
 }
 
 .logo:active {

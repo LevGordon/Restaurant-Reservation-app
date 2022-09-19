@@ -66,7 +66,7 @@ function NewReservations() {
   const formElement = (
     <form className="form" onSubmit={handleSubmit}>
       <label htmlFor="first_name">
-        first name:
+        First name:
         <input
           type="text"
           name="first_name"
@@ -78,7 +78,7 @@ function NewReservations() {
       </label>
 
       <label htmlFor="last_name">
-        last name:
+        Last name:
         <input
           type="text"
           name="last_name"
@@ -90,7 +90,7 @@ function NewReservations() {
       </label>
 
       <label htmlFor="mobile_number">
-        mobile number:
+        Mobile number:
         <input
           type="text"
           name="mobile_number"
@@ -103,7 +103,7 @@ function NewReservations() {
       </label>
 
       <label htmlFor="reservation_date">
-        reservation date:
+        Reservation date:
         <input
           type="date"
           name="reservation_date"
@@ -115,7 +115,7 @@ function NewReservations() {
       </label>
 
       <label htmlFor="reservation_time">
-        reservation time:
+        Reservation time:
         <input
           type="time"
           name="reservation_time"
@@ -127,7 +127,7 @@ function NewReservations() {
       </label>
 
       <label htmlFor="people">
-        amount of people:
+        Amount of people:
         <input
           type="number"
           name="people"

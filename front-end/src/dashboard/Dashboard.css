@@ -9,6 +9,19 @@ h3 {
 }
 
 button {
-    border-radius: 5%;
+    border-radius: 3px;
 }
 
+#scroll-button {
+    outline: 1px whitesmoke;
+    transition: all 0.55s ease-in;
+}
+
+#scroll-button:hover {
+    outline: 1px solid gold;
+}
+
+#scroll-button:active {
+    background-color: lightgoldenrodyellow;
+    transition: all 0.1s linear;
+}
