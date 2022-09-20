@@ -123,8 +123,8 @@ function Dashboard({ date }) {
           <button
             type="button"
             name="previous-btn"
-            id="scroll-button"
-            className="ml-auto"
+            // id="scroll-button"
+            className="ml-auto scroll-button"
             onClick={previousHandler}
           >
             Previous
@@ -132,8 +132,8 @@ function Dashboard({ date }) {
           <button
             type="button"
             name="next-btn"
-            id="scroll-button"
-            className="mx-3"
+            // id="scroll-button"
+            className="mx-3 scroll-button"
             onClick={nextHandler}
           >
             Next
@@ -141,8 +141,8 @@ function Dashboard({ date }) {
           <button
             type="button"
             name="today"
-            id="scroll-button"
-            className="mr-auto"
+            // id="scroll-button"
+            className="mr-auto scroll-button"
             onClick={todayHandler}
           >
             Today
