@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import ErrorAlert from "./ErrorAlert";
-import './NewReservationForm.css'
 
 const { REACT_APP_API_BASE_URL } = process.env;
 

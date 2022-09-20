@@ -1,8 +1,5 @@
 import React from "react";
 import { useHistory } from "react-router";
-
-import './ReservationsList.css'
-
 const { REACT_APP_API_BASE_URL } = process.env;
 
 function ReservationList({ reservation, formatTime }) {

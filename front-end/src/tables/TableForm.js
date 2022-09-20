@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import ErrorAlert from "../layout/ErrorAlert";
 
-import './TableForm.css'
-
 const { REACT_APP_API_BASE_URL } = process.env;
 
 function TableForm() {

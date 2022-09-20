@@ -1,5 +1,5 @@
 import React from "react";
-import './TableList.css'
+
 
 
 const { REACT_APP_API_BASE_URL } = process.env;
@@ -50,7 +50,7 @@ function TableList({ table, loadDashboard }) {
 
 
   return (
-    <div id="whole-card" className="mx-3">
+    <div id="whole-card" className="mx-3 ">
       <div className="row d-flex justify-content-center">
         <h4 id="table-name">Table: {table_name}</h4>
       </div>

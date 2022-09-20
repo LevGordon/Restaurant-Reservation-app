@@ -2,8 +2,7 @@ import React from "react";
 import Menu from "./Menu";
 import Routes from "./Routes";
 
-import "./Layout.css";
-
+// npm cache clean --force
 /**
  * Defines the main layout of the application.
  *

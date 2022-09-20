@@ -5,7 +5,6 @@ import ErrorAlert from "../layout/ErrorAlert";
 import ReservationsList from "./ReservationsList";
 import { formatAsTime, previous, next, today } from "../utils/date-time";
 import TableList from "./TableList";
-import './Dashboard.css' 
 
 
 function Dashboard({ date }) {
@@ -80,9 +79,9 @@ function Dashboard({ date }) {
 
   const tablesList = tables.map((table, index) => (
     <TableList 
-    key={index} 
-    table={table}
-    loadDashboard={loadDashboard} 
+      key={index} 
+      table={table}
+      loadDashboard={loadDashboard} 
     />
   ));
 
@@ -121,28 +120,28 @@ function Dashboard({ date }) {
         </h3>
         <div className="col d-flex flex-wrap justify-content-around my-3">
           <button
-            type="button"
+            // type="button"
             name="previous-btn"
             // id="scroll-button"
-            className="ml-auto scroll-button"
+            className="btn ml-auto scroll-button"
             onClick={previousHandler}
           >
             Previous
           </button>
           <button
-            type="button"
+            // type="button"
             name="next-btn"
             // id="scroll-button"
-            className="mx-3 scroll-button"
+            className="btn mx-3 scroll-button"
             onClick={nextHandler}
           >
             Next
           </button>
           <button
-            type="button"
+            // type="button"
             name="today"
             // id="scroll-button"
-            className="mr-auto scroll-button"
+            className="btn mr-auto scroll-button"
             onClick={todayHandler}
           >
             Today
@@ -164,7 +163,7 @@ function Dashboard({ date }) {
 
         <br />
 
-        <div className="col d-flex flex-wrap">
+        <div className="col d-flex flex-wrap table-list mt-3">
           {tablesList.length === 0 ? <h3>No Tables Listed</h3> : tablesList}
         </div>
       </div>

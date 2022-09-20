@@ -3,8 +3,6 @@ import ErrorAlert from "./ErrorAlert";
 import ReservationList from "../dashboard/ReservationsList";
 import { formatAsTime } from "../utils/date-time";
 
-import "./Search.css";
-
 const { REACT_APP_API_BASE_URL } = process.env;
 
 function Search() {

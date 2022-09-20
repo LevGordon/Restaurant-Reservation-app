@@ -3,8 +3,6 @@ import { useHistory, useParams } from "react-router";
 import { listTables } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
 
-import './SeatTableForm.css'
-
 const { REACT_APP_API_BASE_URL } = process.env;
 
 
