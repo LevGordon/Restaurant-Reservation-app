@@ -140,7 +140,7 @@ li {
 /* ReservationList css start */
 
 #reservation-card {
-    background-color: palegoldenrod;
+    background-color: rgb(223, 177, 117);
     margin: 5px;
     margin-top: 15px;
     padding: 10px;
@@ -154,23 +154,45 @@ li {
     background-color: whitesmoke;
     color: black;
     font-size: 16px;
-    padding: 2px;
+    padding: 3px;
+    margin-bottom: 12px;
 }
 
-.time {
-    color: black;
+#card-label {
+    font-size: 15px;
+}
+
+#card-text {
     font-size: 17px;
-
-}
-
-.colorfulBtn, a {
-    margin: 3px;
-    color: gainsboro;
 }
 
 .text-dark {
     color: gainsboro;
 }
+
+.reservations-buttons {
+    border: solid 1px black;
+    transition: all 0.55s ease-in;
+    color: whitesmoke;
+    background-color: black;
+    border-radius: 3px;
+
+    margin: 5px;
+    padding: 5px 10px;
+    margin-bottom: 50%;
+}
+
+.reservations-buttons:hover {
+    border: 1px solid gold;
+    color: whitesmoke;
+
+}
+
+.reservations-buttons:active {
+    background-color: lightgoldenrodyellow;
+    transition: all 0.1s ease-in;
+}
+
 
 /* ReservationList css end */
 
