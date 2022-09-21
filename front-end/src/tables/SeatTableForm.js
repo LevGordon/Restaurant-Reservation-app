@@ -58,21 +58,25 @@ function SeatTableForm() {
 
   return (
     <div>
-      {error ? <ErrorAlert errorMessage={error}/> : <></>}
+      {error ? <ErrorAlert errorMessage={error}/> : <h3 className="h3-seat-table-form">Seat the guests at a table</h3>}
       <div className="form-group">
-        <form onSubmit={submitHandler}>
-          <label htmlFor="table_id">Choose a table to seat the guests : </label>
+        <form onSubmit={submitHandler} className='seat-table-form'>
+          <label htmlFor="table_id">Choose a table: </label>
           <select required id="select" name="table_id">
             {tableOptions}
           </select>
           <br />
           <button
             type="button"
-            onClick={() => history.goBack()}
+            className="seat-table-form-buttons"
+            onClick={() => history.push('/')}
           >
             Cancel
           </button>
-          <button type="submit">
+          <button 
+          type="submit"
+          className="seat-table-form-buttons"
+          >
             Submit
           </button>
         </form>

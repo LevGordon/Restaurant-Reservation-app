@@ -211,8 +211,8 @@ li {
 
 label {
     color: whitesmoke;
-    font-size: 14px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 8px;
 }
 
 input {
@@ -233,12 +233,6 @@ input {
 
 /* EditReservation css start */
 
-label {
-    color: whitesmoke;
-    font-size: 15px;
-    padding: 5px;
-}
-
 select {
     padding: 5px;
     margin: 5px;
@@ -251,11 +245,6 @@ select {
 
 
 /* Search css start */
-label {
-    color: whitesmoke;
-    font-size: 28px;
-    padding: 10px;
-}
 
 input {
     padding: 5px;
@@ -282,6 +271,7 @@ form {
     transition: all 0.55s ease-in-out;
     
 }
+
 /* Search css end */
 
 
@@ -290,15 +280,40 @@ form {
 
 /* SeatTableForm css start */
 
-label {
-    color: whitesmoke;
-    font-size: 15px;
-    padding: 5px;
+.h3-seat-table-form {
+    display: flex;
+    justify-content: center;
+
 }
 
-select {
-    padding: 5px;
+.seat-table-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.seat-table-form-buttons {
+    border: solid 1px black;
+    transition: all 0.55s ease-in;
+    color: whitesmoke;
+    background-color: black;
+    border-radius: 3px;
+
     margin: 5px;
+    padding: 5px 10px;
+    margin-bottom: 50%;
+}
+
+.seat-table-form-buttons:hover {
+    border: 1px solid gold;
+    color: whitesmoke;
+
+}
+
+.seat-table-form-buttons:active {
+    background-color: lightgoldenrodyellow;
+    transition: all 0.1s ease-in;
 }
 
 /* SeatTableForm css end */
@@ -307,12 +322,42 @@ select {
 
 
 
-
 /* TableForm css start */
 
-.button-tableForm {
-    padding: 5px 15px 5px 15px;
-    margin: 0 5px 0 5px;
+.h3-table-form {
+    display: flex;
+    justify-content: center;
+
+}
+
+.tableForm-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.table-form-buttons {
+    border: solid 1px black;
+    transition: all 0.55s ease-in;
+    color: whitesmoke;
+    background-color: black;
+    border-radius: 3px;
+
+    margin: 5px;
+    padding: 5px 10px;
+    margin-bottom: 50%;
+}
+
+.table-form-buttons:hover {
+    border: 1px solid gold;
+    color: whitesmoke;
+
+}
+
+.table-form-buttons:active {
+    background-color: lightgoldenrodyellow;
+    transition: all 0.1s ease-in;
 }
 
 /* TableForm css end */
