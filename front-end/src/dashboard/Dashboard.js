@@ -163,7 +163,7 @@ function Dashboard({ date }) {
 
         <br />
 
-        <div className="col d-flex flex-wrap table-list mt-3">
+        <div className="col d-flex flex-wrap table-list mt-2">
           {tablesList.length === 0 ? <h3>No Tables Listed</h3> : tablesList}
         </div>
       </div>
