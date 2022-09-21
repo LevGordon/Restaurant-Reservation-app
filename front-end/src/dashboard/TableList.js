@@ -76,6 +76,7 @@ function TableList({ table, loadDashboard }) {
             type="button"
             id="finish-btn"
             data-table-id-finish={table.table_id}
+            className='table-list-buttons'
             onClick={finishBtnHandler}
           >
             Finish

@@ -179,7 +179,6 @@ li {
 
     margin: 5px;
     padding: 5px 10px;
-    margin-bottom: 50%;
 }
 
 .reservations-buttons:hover {
@@ -221,6 +220,28 @@ li {
     background-color: green;
     padding: 1px;
     outline: 1px solid green;
+}
+
+.table-list-buttons {
+    border: solid 1px black;
+    transition: all 0.55s ease-in;
+    color: whitesmoke;
+    background-color: black;
+    border-radius: 3px;
+
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+.table-list-buttons:hover {
+    border: 1px solid gold;
+    color: whitesmoke;
+
+}
+
+.table-list-buttons:active {
+    background-color: lightgoldenrodyellow;
+    transition: all 0.1s ease-in;
 }
 
 /* TableList css end */
