@@ -66,7 +66,7 @@ function NewReservations() {
   };
 
   const formElement = (
-    <form className="form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="first_name">
         First name:
         <input

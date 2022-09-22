@@ -1,133 +1,140 @@
+/* MOBILE */
+
 /* Layout css start */
-body, html {
-    font-family: sans-serif;
-    font-size: 16px;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
+body,
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 h3 {
-    color: gainsboro;
-    margin-bottom: 25px;
-    margin-top: 3%;
+  color: gainsboro;
+  margin-bottom: 25px;
+  margin-top: 1%;
 }
 
 h4 {
-    border: 2px solid black;
-    border-radius: 15%;
-    background-color: gainsboro;
-    padding: 3px;
+  border: 2px solid black;
+  border-radius: 15%;
+  background-color: gainsboro;
+  padding: 3px;
 }
 
 span {
-    color: gainsboro;
+  color: gainsboro;
 }
 
 li {
-    margin-right: auto;
+  margin-right: auto;
 }
 
 .side-bar {
-    min-width: 200px;
-    background: black;
-    background: linear-gradient(14deg, black 0%, rgb(27, 24, 0) 45%, black 100%);
+  min-width: 200px;
+  background: black;
+  background: linear-gradient(
+    14deg,
+    black 0%,
+    rgb(27, 24, 0) 45%,
+    black 100%
+  );
 }
-  
+
 #main-container {
-    background: rgb(2,0,36);
-    background: linear-gradient(344deg, rgba(2,0,36,1) 0%, rgb(80, 68, 0) 45%, rgba(0,0,0,1) 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    344deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgb(80, 68, 0) 45%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 /* Layout css end */
 
-
-
-
-
 /* Menu css start */
 
 #background-container {
-    height: 7rem;
-    border-bottom: black solid 2px;
+  border-bottom: black solid 2px;
 }
 
 #logo {
-    color: white;
-    font-family: 'Satisfy', cursive;
-    font-size: 45px;
-    width: fit-content;
-    margin-left: 10px;
-    margin-top: 5px;
-    padding: 1rem 2.5rem;
-    z-index: 1;
+  color: white;
+  font-family: "Satisfy", cursive;
+  font-size: 45px;
+  width: fit-content;
+  margin-left: 10px;
+  margin-top: 5px;
+  padding: 1rem 2.5rem;
+  z-index: 1;
 }
 
 #nav {
-    height:6.5rem;
-    z-index: 2;
+  height: 6.5rem;
+  z-index: 2;
 }
 
 .nav-item {
-    outline: 1px whitesmoke;
-    border-radius: 3px;
-    transition: all 0.55s ease-in;
+  outline: 1px whitesmoke;
+  border-radius: 3px;
+  transition: all 0.55s ease-in;
 }
 
 .nav-item:hover {
-    outline: 1px solid gold;
+  outline: 1px solid gold;
 }
 
 .nav-item:active {
-    background-color: lightgoldenrodyellow;
-    transition: all 0.1s linear;
+  background-color: lightgoldenrodyellow;
+  transition: all 0.1s linear;
 }
 
 .logo {
-    border-radius: 5px;
-    transition: all 0.55s ease-in;
+  border-radius: 5px;
+  transition: all 0.55s ease-in;
 }
 
 .logo:hover {
-    outline: 1px solid gold;
-    color: gold;
+  outline: 1px solid gold;
+  color: gold;
 }
 
 .logo:active {
-    background-color: lightgray;
-    transition: all 0.1s ease-in;
+  background-color: lightgray;
+  transition: all 0.1s ease-in;
 }
 
 /* Menu css end */
 
-
-
-
-
-
 /* dashboard css start */
 
 #main-banner {
-    background: black;
-    background: linear-gradient(14deg, black 0%, rgb(46, 41, 0) 45%, black 100%); 
+  background: black;
+  background: linear-gradient(
+    14deg,
+    black 0%,
+    rgb(46, 41, 0) 45%,
+    black 100%
+  );
 }
 
 .scroll-button {
-    border: solid 1px black;
-    transition: all 0.55s ease-in;
-    color: whitesmoke;
-    background-color: black;
+  border: solid 1px black;
+  transition: all 0.55s ease-in;
+  color: whitesmoke;
+  background-color: black;
 }
 
 .scroll-button:hover {
-    border: 1px solid gold;
-    color: whitesmoke;
-
+  border: 1px solid gold;
+  color: whitesmoke;
 }
 
 .scroll-button:active {
-    background-color: lightgoldenrodyellow;
-    transition: all 0.1s ease-in;
+  background-color: lightgoldenrodyellow;
+  transition: all 0.1s ease-in;
 }
 
 /* Dashboard css end */
@@ -137,9 +144,159 @@ li {
 
 
 
-/* ReservationList css start */
 
-#reservation-card {
+
+
+
+
+
+
+/* DESKTOP */
+
+@media only screen and (min-width: 768px) {
+  /* Layout css start */
+  body,
+  html {
+    font-family: sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    color: gainsboro;
+    margin-bottom: 25px;
+    margin-top: 3%;
+  }
+
+  h4 {
+    border: 2px solid black;
+    border-radius: 15%;
+    background-color: gainsboro;
+    padding: 3px;
+  }
+
+  span {
+    color: gainsboro;
+  }
+
+  li {
+    margin-right: auto;
+  }
+
+  .side-bar {
+    min-width: 200px;
+    background: black;
+    background: linear-gradient(
+      14deg,
+      black 0%,
+      rgb(27, 24, 0) 45%,
+      black 100%
+    );
+  }
+
+  #main-container {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      344deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgb(80, 68, 0) 45%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+
+  /* Layout css end */
+
+  /* Menu css start */
+
+  #background-container {
+    height: 7rem;
+    border-bottom: black solid 2px;
+  }
+
+  #logo {
+    color: white;
+    font-family: "Satisfy", cursive;
+    font-size: 45px;
+    width: fit-content;
+    margin-left: 10px;
+    margin-top: 5px;
+    padding: 1rem 2.5rem;
+    z-index: 1;
+  }
+
+  #nav {
+    height: 6.5rem;
+    z-index: 2;
+  }
+
+  .nav-item {
+    outline: 1px whitesmoke;
+    border-radius: 3px;
+    transition: all 0.55s ease-in;
+  }
+
+  .nav-item:hover {
+    outline: 1px solid gold;
+  }
+
+  .nav-item:active {
+    background-color: lightgoldenrodyellow;
+    transition: all 0.1s linear;
+  }
+
+  .logo {
+    border-radius: 5px;
+    transition: all 0.55s ease-in;
+  }
+
+  .logo:hover {
+    outline: 1px solid gold;
+    color: gold;
+  }
+
+  .logo:active {
+    background-color: lightgray;
+    transition: all 0.1s ease-in;
+  }
+
+  /* Menu css end */
+
+  /* dashboard css start */
+
+  #main-banner {
+    background: black;
+    background: linear-gradient(
+      14deg,
+      black 0%,
+      rgb(46, 41, 0) 45%,
+      black 100%
+    );
+  }
+
+  .scroll-button {
+    border: solid 1px black;
+    transition: all 0.55s ease-in;
+    color: whitesmoke;
+    background-color: black;
+  }
+
+  .scroll-button:hover {
+    border: 1px solid gold;
+    color: whitesmoke;
+  }
+
+  .scroll-button:active {
+    background-color: lightgoldenrodyellow;
+    transition: all 0.1s ease-in;
+  }
+
+  /* Dashboard css end */
+
+  /* ReservationList css start */
+
+  #reservation-card {
     background-color: rgb(223, 177, 117);
     margin: 5px;
     margin-top: 15px;
@@ -147,30 +304,30 @@ li {
     width: 30%;
     outline: 2px solid black;
     border-radius: 5px;
-}
+  }
 
-#card-title {
+  #card-title {
     outline: 1px solid black;
     background-color: whitesmoke;
     color: black;
     font-size: 16px;
     padding: 3px;
     margin-bottom: 12px;
-}
+  }
 
-#card-label {
+  #card-label {
     font-size: 15px;
-}
+  }
 
-#card-text {
+  #card-text {
     font-size: 17px;
-}
+  }
 
-.text-dark {
+  .text-dark {
     color: gainsboro;
-}
+  }
 
-.reservations-buttons {
+  .reservations-buttons {
     border: solid 1px black;
     transition: all 0.55s ease-in;
     color: whitesmoke;
@@ -179,50 +336,44 @@ li {
 
     margin: 5px;
     padding: 5px 10px;
-}
+  }
 
-.reservations-buttons:hover {
+  .reservations-buttons:hover {
     border: 1px solid gold;
     color: whitesmoke;
+  }
 
-}
-
-.reservations-buttons:active {
+  .reservations-buttons:active {
     background-color: lightgoldenrodyellow;
     transition: all 0.1s ease-in;
-}
+  }
 
+  /* ReservationList css end */
 
-/* ReservationList css end */
+  /* TableList css start */
 
-
-
-
-
-/* TableList css start */
-
-#whole-card {
-    background: url('./photos/table.jpg');
+  #whole-card {
+    background: url("./photos/table.jpg");
     margin: 5px;
     padding: 15px;
     width: 40%;
     border: 2px solid black;
     border-radius: 15px;
-}
+  }
 
-.red-box {
+  .red-box {
     background-color: red;
     padding: 1px;
     outline: 1px solid red;
-}
+  }
 
-.green-box {
+  .green-box {
     background-color: green;
     padding: 1px;
     outline: 1px solid green;
-}
+  }
 
-.table-list-buttons {
+  .table-list-buttons {
     border: solid 1px black;
     transition: all 0.55s ease-in;
     color: whitesmoke;
@@ -231,39 +382,34 @@ li {
 
     margin: 5px;
     padding: 5px 10px;
-}
+  }
 
-.table-list-buttons:hover {
+  .table-list-buttons:hover {
     border: 1px solid gold;
     color: whitesmoke;
+  }
 
-}
-
-.table-list-buttons:active {
+  .table-list-buttons:active {
     background-color: lightgoldenrodyellow;
     transition: all 0.1s ease-in;
-}
+  }
 
-/* TableList css end */
+  /* TableList css end */
 
+  /* NewReservation css start */
 
-
-
-
-/* NewReservation css start */
-
-label {
+  label {
     color: whitesmoke;
     font-size: 16px;
     padding: 8px;
-}
+  }
 
-input {
+  input {
     padding: 5px;
     margin: 5px;
-}
+  }
 
-.newReservation-buttons {
+  .newReservation-buttons {
     border: solid 1px black;
     transition: all 0.55s ease-in;
     color: whitesmoke;
@@ -272,32 +418,27 @@ input {
 
     margin: 5px;
     padding: 5px 10px;
-}
+  }
 
-.newReservation-buttons:hover {
+  .newReservation-buttons:hover {
     border: 1px solid gold;
     color: whitesmoke;
+  }
 
-}
-
-.newReservation-buttons:active {
+  .newReservation-buttons:active {
     background-color: lightgoldenrodyellow;
     transition: all 0.1s ease-in;
-}
+  }
 
-/* NewReservation css end */
+  /* NewReservation css end */
 
+  /* EditReservation css start */
 
-
-
-
-/* EditReservation css start */
-
-.edit-reservation-input {
+  .edit-reservation-input {
     width: auto;
-}
+  }
 
-.edit-reservation-buttons  {
+  .edit-reservation-buttons {
     border: solid 1px black;
     transition: all 0.55s ease-in;
     color: whitesmoke;
@@ -306,40 +447,35 @@ input {
 
     margin: 5px;
     padding: 7px 15px;
-}
+  }
 
-.edit-reservation-buttons:hover {
+  .edit-reservation-buttons:hover {
     border: 1px solid gold;
     color: whitesmoke;
+  }
 
-}
-
-.edit-reservation-buttons:active {
+  .edit-reservation-buttons:active {
     background-color: lightgoldenrodyellow;
     transition: all 0.1s ease-in;
-}
+  }
 
-/* EditReservation css end */
+  /* EditReservation css end */
 
+  /* Search css start */
 
-
-
-
-/* Search css start */
-
-form {
+  form {
     margin-top: 5%;
-}
+  }
 
-.search-label {
+  .search-label {
     font-size: 20px;
-}
+  }
 
-.search-input {
+  .search-input {
     width: 260px;
-}
+  }
 
-.search-buttons  {
+  .search-buttons {
     border: solid 1px black;
     transition: all 0.55s ease-in;
     color: whitesmoke;
@@ -348,42 +484,35 @@ form {
 
     margin: 5px;
     padding: 7px 15px;
-}
+  }
 
-.search-buttons:hover {
+  .search-buttons:hover {
     border: 1px solid gold;
     color: whitesmoke;
+  }
 
-}
-
-.search-buttons:active {
+  .search-buttons:active {
     background-color: lightgoldenrodyellow;
     transition: all 0.1s ease-in;
-}
+  }
 
+  /* Search css end */
 
-/* Search css end */
+  /* SeatTableForm css start */
 
-
-
-
-
-/* SeatTableForm css start */
-
-.h3-seat-table-form {
+  .h3-seat-table-form {
     display: flex;
     justify-content: center;
+  }
 
-}
-
-.seat-table-form {
+  .seat-table-form {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: baseline;
-}
+  }
 
-.seat-table-form-buttons {
+  .seat-table-form-buttons {
     border: solid 1px black;
     transition: all 0.55s ease-in;
     color: whitesmoke;
@@ -393,41 +522,35 @@ form {
     margin: 5px;
     padding: 5px 10px;
     margin-bottom: 50%;
-}
+  }
 
-.seat-table-form-buttons:hover {
+  .seat-table-form-buttons:hover {
     border: 1px solid gold;
     color: whitesmoke;
+  }
 
-}
-
-.seat-table-form-buttons:active {
+  .seat-table-form-buttons:active {
     background-color: lightgoldenrodyellow;
     transition: all 0.1s ease-in;
-}
+  }
 
-/* SeatTableForm css end */
+  /* SeatTableForm css end */
 
+  /* TableForm css start */
 
-
-
-
-/* TableForm css start */
-
-.h3-table-form {
+  .h3-table-form {
     display: flex;
     justify-content: center;
+  }
 
-}
-
-.tableForm-form {
+  .tableForm-form {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: baseline;
-}
+  }
 
-.table-form-buttons {
+  .table-form-buttons {
     border: solid 1px black;
     transition: all 0.55s ease-in;
     color: whitesmoke;
@@ -437,17 +560,17 @@ form {
     margin: 5px;
     padding: 5px 10px;
     margin-bottom: 50%;
-}
+  }
 
-.table-form-buttons:hover {
+  .table-form-buttons:hover {
     border: 1px solid gold;
     color: whitesmoke;
+  }
 
-}
-
-.table-form-buttons:active {
+  .table-form-buttons:active {
     background-color: lightgoldenrodyellow;
     transition: all 0.1s ease-in;
-}
+  }
 
-/* TableForm css end */
+  /* TableForm css end */
+}
