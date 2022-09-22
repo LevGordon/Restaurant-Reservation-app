@@ -90,60 +90,65 @@ function EditReservation() {
         {error ? <ErrorAlert errorMessage={errorMessage}/> : <></>}
       <div className="form-group">
         <form onSubmit={submitHandler}>
-          <label htmlFor="first_name">First Name:</label>
+          <label htmlFor="first_name">First name:</label>
           <input
             required
             type="text"
             id="first_name"
             name="first_name"
+            className="edit-reservation-input"
             value={formData.first_name}
             onChange={changeHandler}
           ></input>
-          <label htmlFor="last_name">Last Name:</label>
+          <label htmlFor="last_name">Last name:</label>
           <input
             required
             type="text"
             id="last_name"
             name="last_name"
+            className="edit-reservation-input"
             value={formData.last_name}
             onChange={changeHandler}
           ></input>
-          <label htmlFor="mobile_number">Reservation Contact Number:</label>
+          <label htmlFor="mobile_number">Mobile number:</label>
           <input
             required
             type="text"
             id="mobile_number"
             name="mobile_number"
             placeholder="xxx-xxx-xxxx"
+            className="edit-reservation-input"
             value={formData.mobile_number}
             onChange={changeHandler}
           ></input>
-          <label htmlFor="reservation_date">Reservation Date:</label>
+          <label htmlFor="reservation_date">Reservation date:</label>
           <input
             required                
             type="date"
             id="reservation_date"
             name="reservation_date"
             placeholder={new Date()}
+            className="edit-reservation-input"
             value={formData.reservation_date}
             onChange={changeHandler}
           ></input>
-          <label htmlFor="reservation_time">Reservation Start Time:</label>
+          <label htmlFor="reservation_time">Reservation time:</label>
           <input
             required
             type="time"
             id="reservation_time"
             name="reservation_time"
-            // placeholder="HH:MM:SS"
+            className="edit-reservation-input"
             value={formData.reservation_time}
             onChange={changeHandler}
           ></input>
-          <label htmlFor="people">Number of Guests:</label>
+          <label htmlFor="people">Amount of people:</label>
           <input
             required
             type="number"
             id="people"
             name="people"
+            className="edit-reservation-input"
             value={formData.people}
             onChange={changeHandler}
           ></input>
@@ -151,13 +156,15 @@ function EditReservation() {
           <button
             type="button"
             name="cancel-btn"
+            className="edit-reservation-buttons"
             onClick={cancelHandler}
           >
             Cancel
           </button>
           <button
             type="submit"
-            name="submit-btn"         
+            name="submit-btn"   
+            className="edit-reservation-buttons"      
           >
             Submit
           </button>

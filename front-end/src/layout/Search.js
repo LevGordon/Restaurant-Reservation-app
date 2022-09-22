@@ -61,15 +61,16 @@ function Search() {
       </div>
       <div className="row d-flex justify-content-center">
         <form onSubmit={submitHandler}>
-          <label htmlFor="mobile_number">Search:</label>
+          <label htmlFor="mobile_number" className="search-label">Search:</label>
           <input
             required
             name="mobile_number"
             id="mobile_number"
+            className="search-input"
             onChange={changeHandler}
             placeholder="Enter a customer's phone number"
           ></input>
-          <button type="submit">Find</button>
+          <button type="submit" className="search-buttons">Find</button>
         </form>
       </div>
       <div>

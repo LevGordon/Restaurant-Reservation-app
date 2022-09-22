@@ -46,7 +46,7 @@ function NewReservations() {
     if (response.status !== 400) {
       setFormData({ ...initialFormState });
       // history.goBack();
-      history.push(`/dashboard?date=${formData.reservation_date}`)
+      history.push(`/dashboard?date=${formData.reservation_date}`);
     }
   };
 
@@ -58,7 +58,10 @@ function NewReservations() {
   const handleInputChange = (event) => {
     setFormData({
       ...formData,
-      [event.target.name]: event.target.name === "people" ? Number(event.target.value) : event.target.value
+      [event.target.name]:
+        event.target.name === "people"
+          ? Number(event.target.value)
+          : event.target.value,
     });
   };
 
@@ -136,24 +139,20 @@ function NewReservations() {
           required
         />
       </label>
-      <button type="button" onClick={handleCancel}>
+      <button type="button" onClick={handleCancel} className='newReservation-buttons'>
         {" "}
         Cancel{" "}
       </button>
-      <button type="submit"> Submit </button>
+      <button type="submit" className='newReservation-buttons'> Submit </button>
     </form>
   );
 
   return (
     <div className="main-background">
-      {error ? <ErrorAlert errorMessage={errorMessage}/> : <></>}
-      <div className="form-group">
-      {formElement}
-      </div>
+      {error ? <ErrorAlert errorMessage={errorMessage} /> : <></>}
+      <div className="form-group">{formElement}</div>
     </div>
-    
-
-  )
+  );
 }
 
 export default NewReservations;

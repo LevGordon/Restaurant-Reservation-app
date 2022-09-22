@@ -263,9 +263,26 @@ input {
     margin: 5px;
 }
 
-.button-new-res {
-    padding: 5px 15px 5px 15px;
-    margin: 0 5px 0 5px;
+.newReservation-buttons {
+    border: solid 1px black;
+    transition: all 0.55s ease-in;
+    color: whitesmoke;
+    background-color: black;
+    border-radius: 3px;
+
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+.newReservation-buttons:hover {
+    border: 1px solid gold;
+    color: whitesmoke;
+
+}
+
+.newReservation-buttons:active {
+    background-color: lightgoldenrodyellow;
+    transition: all 0.1s ease-in;
 }
 
 /* NewReservation css end */
@@ -276,9 +293,30 @@ input {
 
 /* EditReservation css start */
 
-select {
-    padding: 5px;
+.edit-reservation-input {
+    width: auto;
+}
+
+.edit-reservation-buttons  {
+    border: solid 1px black;
+    transition: all 0.55s ease-in;
+    color: whitesmoke;
+    background-color: black;
+    border-radius: 3px;
+
     margin: 5px;
+    padding: 7px 15px;
+}
+
+.edit-reservation-buttons:hover {
+    border: 1px solid gold;
+    color: whitesmoke;
+
+}
+
+.edit-reservation-buttons:active {
+    background-color: lightgoldenrodyellow;
+    transition: all 0.1s ease-in;
 }
 
 /* EditReservation css end */
@@ -289,26 +327,40 @@ select {
 
 /* Search css start */
 
-.button-search {
-    border-radius: 3px;
-    padding: 5px 15px 5px 15px;
-}
-
 form {
     margin-top: 5%;
 }
 
-.button-white{
-    color: whitesmoke;
-    background-color: black;
-    border: 0.5px whitesmoke;
+.search-label {
+    font-size: 20px;
 }
 
-.button-white:hover {
-    border: 1px solid gold;
-    transition: all 0.55s ease-in-out;
-    
+.search-input {
+    width: 260px;
 }
+
+.search-buttons  {
+    border: solid 1px black;
+    transition: all 0.55s ease-in;
+    color: whitesmoke;
+    background-color: black;
+    border-radius: 3px;
+
+    margin: 5px;
+    padding: 7px 15px;
+}
+
+.search-buttons:hover {
+    border: 1px solid gold;
+    color: whitesmoke;
+
+}
+
+.search-buttons:active {
+    background-color: lightgoldenrodyellow;
+    transition: all 0.1s ease-in;
+}
+
 
 /* Search css end */
 
