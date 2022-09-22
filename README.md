@@ -27,19 +27,37 @@ When reffering to the word "user", I actually mean the owner or staff.
 let user = "owner" || "staff"        // :D
 
 
-1. The user is able to create (add to the database) a reservation, based on information given by the guests. The user can create a reservation by nagivating to '/' , filling out the form and pressing submit. That reservation will be stored and displayed on the dashboard, allowing the user to do certain actions to the reservation.
+1. CREATE RESERVATION 
 
-2. The user can view all existing reservations by navigating to the dashboard ('/') and utilizing the "previous" "next" and "today" buttons. Respectively, they will show you all the reservations on the previous day, next day and today. 
+The user is able to create (add to the database) a reservation, based on information given by the guests. The user can create a reservation by nagivating to ('/reservations/new') , filling out the form and pressing submit, or pressing "New Reservation" in the top right corner of the dashboard ('/dashboard'). The new reservation will be stored and displayed on the dashboard, allowing the user to do certain actions with the reservation desribed below.
 
-3. The user is able to edit and modify an already existing reservation. The user can edit a reservation by navigating to the dashboard ('/') and clicking the "edit" button on a reservation card, or navigating to ('/'). 
+2. VIEW RESERVATIONS 
 
-4. The user is capable of deleting a reservation. They can do so by navigating to the dashboard ('/') and then pressing the "cancel" button within a reservation card. A pop-up window will show in order to confirm their decision and avoid accidentals.
+The user can view all existing reservations by navigating to the dashboard ('/dashboard') and utilizing the "previous" "next" and "today" buttons. Respectively, they will show you all the reservations on the previous day, next day and today. 
 
-5. The user can asign or "seat" guests to a specific table. This can be done by navigating to the dashboard ('/') and then pressing the "seat" button within a reservation card. The user will be transferred to ('/') which will allow them to select the desired table. After the guests are seated, the table status will be updated to occupied and the reservation card will still be visible, with a status of "seated". 
+3. EDIT RESERVATION
 
-6. The user can search for reservations by the guests phone number. By navigating to ('/') or clicking "search" in the top right on the dashboard ('/'), the user may enter a phone number which will display all reservations associated with that number. 
+The user is able to edit and modify an already existing reservation. The user can edit a reservation by navigating to the dashboard ('/dashboard') and clicking the "edit" button on a reservation card, or navigating to ('/reservations/{reservation id}/edit'). 
 
-7. The user may also create a table by navigating to ('/') or pressing "new table" in the top right of the dashboard screen ('/'). This will take them to a new page where they can fill out a form to create a new table.
+4. DELETE RESERVATION
+
+The user is capable of deleting a reservation. They can do so by navigating to the dashboard ('/dashboard') and then pressing the "cancel" button within a reservation card. A pop-up window will show in order to confirm their decision and avoid accidentals.
+
+5. CREATE TABLE
+
+The user may also create a table by navigating to ('/tables/new') or pressing "new table" in the top right of the dashboard ('/dashboard') screen ('/dashboard') . This will take them to a new page where they can fill out a form to create a new table. 
+
+6. SEAT GUEST AT TABLE
+
+The user can asign or "seat" guests to a specific table. This can be done by navigating to the dashboard ('/dashboard') and then pressing the "seat" button within a reservation card. The user will be transferred to ('/reservations/{reservation id}/seat') which will allow them to select the desired table. After the guests are seated, the table status will be updated to occupied and the reservation card will still be visible, with a status of "seated". 
+
+7. CLEAR TABLE
+
+The user can clear a table by pressing the "finish" button the table card, on the dashboard ('/dashboard'). After it is cleared - the associated reservation is deleted. 
+
+8. SEARCH RESERVATIONS BY PHONE NUMBER
+
+The user can search for reservations by the guests phone number by navigating to ('/search') or clicking "search" in the top right on the dashboard ('/dashboard'), the user may enter a phone number which will display all reservations associated with that number.  
 
 
 
@@ -47,5 +65,8 @@ let user = "owner" || "staff"        // :D
 
 
 
-EXPANSION PLANS:
+EXPANSION PLANS (post-bootcamp) :
 - make the "create table" page show the current state of all tables. In hindsight this should eliminate the possibility of someone forgetting which tables are occupied.
+- delete table button on table card
+- edit table button on table card
+- edit reservation form and new reservation form into one element being called twice with different params.
