@@ -289,11 +289,6 @@ select {
 
 /* Search css start */
 
-input {
-    padding: 5px;
-    margin: 10px;
-}
-
 .button-search {
     border-radius: 3px;
     padding: 5px 15px 5px 15px;
