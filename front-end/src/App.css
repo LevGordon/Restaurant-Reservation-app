@@ -16,21 +16,6 @@ h3 {
   margin-top: 1%;
 }
 
-h4 {
-  border: 2px solid black;
-  border-radius: 15%;
-  background-color: gainsboro;
-  padding: 3px;
-}
-
-span {
-  color: gainsboro;
-}
-
-li {
-  margin-right: auto;
-}
-
 .side-bar {
   min-width: 200px;
   background: black;
@@ -159,10 +144,12 @@ li {
 
   #card-label {
     font-size: 15px;
+    margin-left: 5px;
   }
 
   #card-text {
     font-size: 17px;
+    margin-left: 5px;
   }
 
   .text-dark {
@@ -197,10 +184,36 @@ li {
   #whole-card {
     background: url("./photos/table.jpg");
     margin: 5px;
-    padding: 15px;
-    width: 40%;
+    padding-top: 5px;
+    width: 43%;
     border: 2px solid black;
     border-radius: 15px;
+  }
+
+  h4 {
+    border: 2px solid black;
+    border-radius: 15%;
+    background-color: gainsboro;
+    padding: 3px;
+    font-size: 22px;
+  }
+  
+  span {
+    color: gainsboro;
+  }
+
+  #table-info {
+    padding: 0;
+    margin-right: 0;
+  }
+
+  #table-info-value {
+    padding: 0;
+
+  }
+
+  .table-card-ul {
+    padding: 0;
   }
 
   .red-box {
