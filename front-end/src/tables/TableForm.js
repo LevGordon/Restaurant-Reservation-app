@@ -47,7 +47,7 @@ function TableForm() {
   };
 
   return (
-    <div className="main-background">
+    <div className="col-sm row-lg main-background">
       {error ? <ErrorAlert errorMessage={error} /> : <h3 className="h3-table-form"> Add a new table to the system </h3>}
       <div className="form-group">
         <form onSubmit={submitHandler} className="tableForm-form">

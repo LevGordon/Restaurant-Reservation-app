@@ -75,7 +75,7 @@ function Search() {
       </div>
       <div>
         <div className="row d-flex justify-content-center">
-        {reservationsList.length === 0 ? <h3>Enter phone number above to see associated reservations.</h3> : <h3>Showing reservations for {formState} </h3>}
+        {reservationsList.length === 0 ? <div className="search-h3"><h3>Enter phone number above to see associated reservations.</h3></div> : <div className="search-h3"><h3>Showing reservations for {formState} </h3></div>}
         </div>
         <div className="row d-flex justify-content-center">
           {reservationsList.length === 0 ? (

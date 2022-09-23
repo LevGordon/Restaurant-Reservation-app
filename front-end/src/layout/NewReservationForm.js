@@ -52,7 +52,7 @@ function NewReservations() {
 
   const handleCancel = () => {
     setFormData({ ...initialFormState });
-    history.goBack();
+    history.push('/');
   };
 
   const handleInputChange = (event) => {
@@ -66,7 +66,7 @@ function NewReservations() {
   };
 
   const formElement = (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="row-lg col-sm">
       <label htmlFor="first_name">
         First name:
         <input
@@ -139,11 +139,12 @@ function NewReservations() {
           required
         />
       </label>
-      <button type="button" onClick={handleCancel} className='newReservation-buttons'>
+      <div className="new-res-but-stack"><button onClick={handleCancel} className='newReservation-buttons'>
         {" "}
         Cancel{" "}
       </button>
       <button type="submit" className='newReservation-buttons'> Submit </button>
+      </div>    
     </form>
   );
 

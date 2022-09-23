@@ -86,11 +86,11 @@ function EditReservation() {
   
 
     return (
-      <div>
+      <div className="col-sm row-lg">
         {error ? <ErrorAlert errorMessage={errorMessage}/> : <></>}
-      <div className="form-group">
+      <div className="col-sm row-lg form-group">
         <form onSubmit={submitHandler}>
-          <label htmlFor="first_name">First name:</label>
+          <label htmlFor="first_name">First name:
           <input
             required
             type="text"
@@ -99,8 +99,8 @@ function EditReservation() {
             className="edit-reservation-input"
             value={formData.first_name}
             onChange={changeHandler}
-          ></input>
-          <label htmlFor="last_name">Last name:</label>
+          /></label>
+          <label htmlFor="last_name">Last name:
           <input
             required
             type="text"
@@ -109,8 +109,8 @@ function EditReservation() {
             className="edit-reservation-input"
             value={formData.last_name}
             onChange={changeHandler}
-          ></input>
-          <label htmlFor="mobile_number">Mobile number:</label>
+          /></label>
+          <label htmlFor="mobile_number">Mobile number:
           <input
             required
             type="text"
@@ -120,8 +120,8 @@ function EditReservation() {
             className="edit-reservation-input"
             value={formData.mobile_number}
             onChange={changeHandler}
-          ></input>
-          <label htmlFor="reservation_date">Reservation date:</label>
+          /></label>
+          <label htmlFor="reservation_date">Reservation date:
           <input
             required                
             type="date"
@@ -131,8 +131,8 @@ function EditReservation() {
             className="edit-reservation-input"
             value={formData.reservation_date}
             onChange={changeHandler}
-          ></input>
-          <label htmlFor="reservation_time">Reservation time:</label>
+          /></label>
+          <label htmlFor="reservation_time">Reservation time:
           <input
             required
             type="time"
@@ -141,8 +141,8 @@ function EditReservation() {
             className="edit-reservation-input"
             value={formData.reservation_time}
             onChange={changeHandler}
-          ></input>
-          <label htmlFor="people">Amount of people:</label>
+          /></label>
+          <label htmlFor="people">Amount of people:
           <input
             required
             type="number"
@@ -151,7 +151,7 @@ function EditReservation() {
             className="edit-reservation-input"
             value={formData.people}
             onChange={changeHandler}
-          ></input>
+          /></label>
           <br />
           <button
             type="button"
