@@ -151,7 +151,7 @@ function Dashboard({ date }) {
       </div>
 
       <div className="col-sm row-lg" id='background'>
-        <div className="row-sm row-lg d-flex flex-wrap" id="reservations">
+        <div className="row-sm row-lg-8" id="reservations-render">
           {reservationsList.length === 0 ? (
             <div id="no-reservations">
               <h3>There are no reservations for this date.</h3>
@@ -165,8 +165,8 @@ function Dashboard({ date }) {
 
         <br />
 
-        <div className="col d-flex flex-wrap table-list mt-2">
-          {tablesList.length === 0 ? <h3>No Tables Listed</h3> : tablesList}
+        <div className="col-sm row-lg-4 mt-2" id="tables-render">
+          {tablesList.length === 0 ? <h3>No Tables Listed: add a table</h3> : tablesList}
         </div>
       </div>
       </div>

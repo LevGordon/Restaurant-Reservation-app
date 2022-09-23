@@ -216,6 +216,16 @@ h3 {
     padding: 0;
   }
 
+  #reservations-render {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #tables-render {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .red-box {
     background-color: red;
     padding: 1px;
@@ -558,6 +568,11 @@ h3 {
   /* Menu css end */
 
   /* dashboard css start */
+
+  #background {
+    display: flex;
+    justify-content: center;
+  }
 
   #main-banner {
     background: black;
