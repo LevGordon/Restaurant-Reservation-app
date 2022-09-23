@@ -21,7 +21,7 @@ function TableForm() {
 
   const cancelHandler = () => {
     setFormState({ ...initialFormState });
-    history.push('/');
+    history.push("/");
   };
 
   const submitHandler = async (e) => {
@@ -48,7 +48,11 @@ function TableForm() {
 
   return (
     <div className="col-sm row-lg main-background">
-      {error ? <ErrorAlert errorMessage={error} /> : <h3 className="h3-table-form"> Add a new table to the system </h3>}
+      {error ? (
+        <ErrorAlert errorMessage={error} />
+      ) : (
+        <h3 className="h3-table-form"> Add a new table to the system </h3>
+      )}
       <div className="form-group">
         <form onSubmit={submitHandler} className="tableForm-form">
           <label htmlFor="table_name">Table Name:</label>
@@ -71,21 +75,23 @@ function TableForm() {
             onChange={changeHandler}
           ></input>
           <br />
-          <button
-            type="button"
-            name="cancel-btn"
-            className="table-form-buttons"
-            onClick={cancelHandler}
-          >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            name="submit-btn"
-            className="table-form-buttons"
-          >
-            Submit
-          </button>
+          <div className="table-form-button-wrap">
+            <button
+              type="button"
+              name="cancel-btn"
+              className="table-form-buttons"
+              onClick={cancelHandler}
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              name="submit-btn"
+              className="table-form-buttons"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>
