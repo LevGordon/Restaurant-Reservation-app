@@ -51,11 +51,11 @@ function TableList({ table, loadDashboard }) {
 
   return (
     <div id="whole-card" className="mx-3 ">
-      <div className="row d-flex justify-content-center">
+      <div className="row-lg col-sm d-flex justify-content-center">
         <h4 id="table-name">Table: {table_name}</h4>
       </div>
       <ul>
-        <div className="row d-flex justify-content-center">
+        <div className="row-lg col-sm d-flex justify-content-center">
           <li id="table-info">
             <span className="col">Capacity: </span><span className="col" id="table-info-value">{capacity}</span>
           </li>

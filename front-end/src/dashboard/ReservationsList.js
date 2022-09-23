@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router";
 const { REACT_APP_API_BASE_URL } = process.env;
 
-function ReservationList({ reservation, formatTime }) {
+function ReservationsList({ reservation, formatTime }) {
   const history = useHistory();
   let {
     first_name,
@@ -107,4 +107,4 @@ function ReservationList({ reservation, formatTime }) {
   }
 }
 
-export default ReservationList;
+export default ReservationsList;
