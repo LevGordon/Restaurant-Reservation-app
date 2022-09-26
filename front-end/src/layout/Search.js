@@ -51,7 +51,7 @@ function Search() {
   });
 
   return (
-    <div className="column" id="background">
+    <div className="row d-flex justify-content-center" id="background">
       <div>
         {reservationsError ? (
           <ErrorAlert errorMessage={reservationsError} />
