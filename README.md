@@ -2,7 +2,8 @@
 
 
 ## Try the app for yourself
-[LINK]
+
+https://restaur-reserv-front-lg.herokuapp.com/dashboard
 
 ## Installation
 
