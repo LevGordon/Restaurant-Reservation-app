@@ -17,6 +17,11 @@ https://restaur-reserv-front-lg.herokuapp.com/dashboard
 
 If you have trouble getting the server to run, message me via LinkedIn https://www.linkedin.com/in/lev-j-gordon/
 
+## Technologies used
+
+- React.js accompanied with CSS and Bootstrap for front-end and styling 
+- Node.js, Express, ElephantSQL, PostgreSQL and DBeaver for the back-end
+- Deployed with Heroku
 
 ## SUMMARY AND SCREENSHOTS
 
