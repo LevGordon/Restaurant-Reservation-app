@@ -85,6 +85,7 @@ function EditReservation() {
   
 
     return (
+      <div>
       <ReservationForm 
       resData={formData}  
       submit={submitHandler} 
@@ -92,7 +93,7 @@ function EditReservation() {
       change={changeHandler} 
       error={error}
       />
-
+      </div>
 
   )
   }

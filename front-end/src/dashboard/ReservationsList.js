@@ -46,7 +46,7 @@ function ReservationsList({ reservation, formatTime }) {
   const reservationCard = (
     <div id="reservation-card">
       <div id="card-title">
-        Reservation for {formattedTime}{" "}
+        Reservation for {formattedTime}
         {new Date(`${reservation_date} ${reservation_time}`).getHours() < 12
           ? "AM"
           : "PM"}
@@ -73,7 +73,7 @@ function ReservationsList({ reservation, formatTime }) {
             className="reservations-buttons"
             onClick={() => history.push(`/reservations/${reservation_id}/seat`)}
           >
-            Seat
+            <a href={`/reservations/${reservation_id}/seat`} >Seat</a>
           </button>
         ) : null}
         {status === "Booked" ? (
@@ -82,7 +82,7 @@ function ReservationsList({ reservation, formatTime }) {
             className="reservations-buttons"
             onClick={() => history.push(`/reservations/${reservation_id}/edit`)}
           >
-            Edit{" "}
+            <a href={`/reservations/${reservation_id}/edit`}>Edit</a>
           </button>
         ) : null}
         {status === "Booked" ? (
@@ -92,8 +92,7 @@ function ReservationsList({ reservation, formatTime }) {
             data-reservation-id-cancel={reservation.reservation_id}
             onClick={cancelHandler}
           >
-            {" "}
-            <div> Cancel </div>{" "}
+            <div> Cancel </div>
           </button>
         ) : null}
       </div>

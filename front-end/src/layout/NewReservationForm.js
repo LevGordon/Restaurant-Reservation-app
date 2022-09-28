@@ -26,7 +26,7 @@ function NewReservations() {
 
   const history = useHistory();
 
-  const handleSubmit = async (event) => {
+  async function handleSubmit(event) {
     event.preventDefault();
     console.log(formData);
     const response = await fetch(`${REACT_APP_API_BASE_URL}/reservations`, {
@@ -70,6 +70,7 @@ function NewReservations() {
 
 
   return (
+    <div>
       <ReservationForm 
       resData={formData}  
       submit={handleSubmit} 
@@ -77,6 +78,8 @@ function NewReservations() {
       change={handleInputChange} 
       error={error}
       />
+    </div>
+      
 
 
   )

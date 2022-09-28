@@ -21,7 +21,7 @@ function TableForm() {
 
   const cancelHandler = () => {
     setFormState({ ...initialFormState });
-    history.push("/");
+    history.goBack();
   };
 
   const submitHandler = async (e) => {
