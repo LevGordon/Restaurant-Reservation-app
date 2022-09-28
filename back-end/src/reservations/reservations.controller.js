@@ -92,8 +92,8 @@ function reservationIsInFuture(req, res, next) {
 //validation check for 1 --> Tuesday
 function isTuesday(req, res, next) {
   const { reservation_date } = req.body.data;
-  const dayNum = new Date(reservation_date).getDay();
-  if (dayNum === 1) {
+  const dayNum = new Date(reservation_date).getUTCDay();
+  if (dayNum === 2) {
     return next({
       status: 400,
       message: `Sorry! We're closed on Tuesdays!`
