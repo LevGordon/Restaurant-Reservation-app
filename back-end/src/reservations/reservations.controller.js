@@ -15,7 +15,7 @@ async function list(req, res) {
 
 // VALIDATION PIPELINE
 
-function reservationExists(req, res, next) {
+async function reservationExists(req, res, next) {
   service.read(req.params.reservation_id)
   .then((reservation) => {
   if (reservation) {
@@ -203,7 +203,7 @@ async function updateReservation(req, res, next) {
 }
 
 module.exports = {
-  list,
+  list: [asyncErrorBoundary(list)],
   create: [
     hasRequiredFields,
     hasOnlyValidProperties,
@@ -216,7 +216,7 @@ module.exports = {
     reservationStatus,
     asyncErrorBoundary(create),
   ],
-  read: [reservationExists, asyncErrorBoundary(read)],
+  read: [asyncErrorBoundary(reservationExists), asyncErrorBoundary(read)],
   update: [asyncErrorBoundary(reservationExists), unknownStatus, isValueFinished, asyncErrorBoundary(update)],
   updateReservation: [hasRequiredFields,
     hasOnlyValidProperties,
