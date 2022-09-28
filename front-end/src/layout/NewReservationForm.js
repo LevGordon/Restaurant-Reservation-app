@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import ErrorAlert from "./ErrorAlert";
+import ReservationForm from "./ReservationForm";
 
 const { REACT_APP_API_BASE_URL } = process.env;
 
@@ -15,12 +15,12 @@ function NewReservations() {
   };
 
   const [formData, setFormData] = useState({ ...initialFormState });
-  const [error, setError] = useState(undefined);
-  const [errorMessage, setErrorMessage] = useState(undefined);
+  const [error, setError] = useState(null);
+  // const [errorMessage, setErrorMessage] = useState(undefined);
 
   useEffect(() => {
     const abortController = new AbortController();
-    setErrorMessage(error);
+    setError(error);
     return () => abortController.abort();
   }, [error]);
 
@@ -65,95 +65,21 @@ function NewReservations() {
     });
   };
 
-  const formElement = (
-    <form onSubmit={handleSubmit} className="row-lg col-sm">
-      <label htmlFor="first_name">
-        First name:
-        <input
-          type="text"
-          name="first_name"
-          id="first_name"
-          onChange={handleInputChange}
-          value={formData.first_name}
-          required
-        />
-      </label>
+ 
 
-      <label htmlFor="last_name">
-        Last name:
-        <input
-          type="text"
-          name="last_name"
-          id="last_name"
-          onChange={handleInputChange}
-          value={formData.last_name}
-          required
-        />
-      </label>
 
-      <label htmlFor="mobile_number">
-        Mobile number:
-        <input
-          type="text"
-          name="mobile_number"
-          id="mobile_number"
-          placeholder="xxx-xxx-xxxx"
-          onChange={handleInputChange}
-          value={formData.mobile_number}
-          required
-        />
-      </label>
-
-      <label htmlFor="reservation_date">
-        Reservation date:
-        <input
-          type="date"
-          name="reservation_date"
-          id="reservation_date"
-          onChange={handleInputChange}
-          value={formData.reservation_date}
-          required
-        />
-      </label>
-
-      <label htmlFor="reservation_time">
-        Reservation time:
-        <input
-          type="time"
-          name="reservation_time"
-          id="reservation_time"
-          onChange={handleInputChange}
-          value={formData.reservation_time}
-          required
-        />
-      </label>
-
-      <label htmlFor="people">
-        Amount of people:
-        <input
-          type="number"
-          name="people"
-          id="people"
-          onChange={handleInputChange}
-          value={formData.people}
-          required
-        />
-      </label>
-      <div className="new-res-but-stack"><button onClick={handleCancel} className='newReservation-buttons'>
-        {" "}
-        Cancel{" "}
-      </button>
-      <button type="submit" className='newReservation-buttons'> Submit </button>
-      </div>    
-    </form>
-  );
 
   return (
-    <div className="main-background">
-      {error ? <ErrorAlert errorMessage={errorMessage} /> : <></>}
-      <div className="form-group">{formElement}</div>
-    </div>
-  );
+      <ReservationForm 
+      resData={formData}  
+      submit={handleSubmit} 
+      cancel={handleCancel} 
+      change={handleInputChange} 
+      error={error}
+      />
+
+
+  )
 }
 
 export default NewReservations;

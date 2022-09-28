@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
-import ErrorAlert from "./ErrorAlert";
+import ReservationForm from "./ReservationForm";
 
 
 const { REACT_APP_API_BASE_URL } = process.env;
@@ -20,12 +20,11 @@ function EditReservation() {
   
     const [formData, setFormData] = useState(initialFormState);
     const [error, setError] = useState(undefined);
-    const [errorMessage, setErrorMessage] = useState(undefined);
   
     //USED TO RENDER CURRENT FORM DATA TO BE EDITABLE
     useEffect(() => {
         const abortController = new AbortController();
-        setErrorMessage(error);
+        setError(error);
         return () => abortController.abort();
       }, [error]);
 
@@ -86,92 +85,16 @@ function EditReservation() {
   
 
     return (
-      <div className="col-sm row-lg">
-        {error ? <ErrorAlert errorMessage={errorMessage}/> : <></>}
-      <div className="col-sm row-lg form-group">
-        <form onSubmit={submitHandler}>
-          <label htmlFor="first_name">First name:
-          <input
-            required
-            type="text"
-            id="first_name"
-            name="first_name"
-            className="edit-reservation-input"
-            value={formData.first_name}
-            onChange={changeHandler}
-          /></label>
-          <label htmlFor="last_name">Last name:
-          <input
-            required
-            type="text"
-            id="last_name"
-            name="last_name"
-            className="edit-reservation-input"
-            value={formData.last_name}
-            onChange={changeHandler}
-          /></label>
-          <label htmlFor="mobile_number">Mobile number:
-          <input
-            required
-            type="text"
-            id="mobile_number"
-            name="mobile_number"
-            placeholder="xxx-xxx-xxxx"
-            className="edit-reservation-input"
-            value={formData.mobile_number}
-            onChange={changeHandler}
-          /></label>
-          <label htmlFor="reservation_date">Reservation date:
-          <input
-            required                
-            type="date"
-            id="reservation_date"
-            name="reservation_date"
-            placeholder={new Date()}
-            className="edit-reservation-input"
-            value={formData.reservation_date}
-            onChange={changeHandler}
-          /></label>
-          <label htmlFor="reservation_time">Reservation time:
-          <input
-            required
-            type="time"
-            id="reservation_time"
-            name="reservation_time"
-            className="edit-reservation-input"
-            value={formData.reservation_time}
-            onChange={changeHandler}
-          /></label>
-          <label htmlFor="people">Amount of people:
-          <input
-            required
-            type="number"
-            id="people"
-            name="people"
-            className="edit-reservation-input"
-            value={formData.people}
-            onChange={changeHandler}
-          /></label>
-          <br />
-          <button
-            type="button"
-            name="cancel-btn"
-            className="edit-reservation-buttons"
-            onClick={cancelHandler}
-          >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            name="submit-btn"   
-            className="edit-reservation-buttons"      
-          >
-            Submit
-          </button>
-        </form>
-      </div>
-      </div>
-    );
+      <ReservationForm 
+      resData={formData}  
+      submit={submitHandler} 
+      cancel={cancelHandler} 
+      change={changeHandler} 
+      error={error}
+      />
+
+
+  )
   }
 
 export default EditReservation;
