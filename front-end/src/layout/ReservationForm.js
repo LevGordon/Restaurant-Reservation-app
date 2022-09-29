@@ -78,7 +78,7 @@ function ReservationForm({resData, submit, cancel, change, error}) {
               required
             />
           </label>
-          <div className="new-res-but-stack"><button onClick={cancel} className='newReservation-buttons'>
+          <div className="new-res-but-stack"><button onClick={cancel} className='newReservation-buttons cancel'>
             Cancel
           </button>
           <button type="submit" className='newReservation-buttons'> Submit </button>
