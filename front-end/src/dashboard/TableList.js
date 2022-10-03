@@ -8,7 +8,6 @@ function TableList({ table, loadDashboard }) {
   const { table_id, table_name, capacity, reservation_id } = table;
 
   async function finishBtnHandler() {
-    console.log("finishBtnHandler called")
     const alertMessage =
       "Is this table ready to seat new guests?\nThis cannot be undone.";
     if (window.confirm(alertMessage) === true) {
@@ -24,10 +23,8 @@ function TableList({ table, loadDashboard }) {
                 }
               );
                 if (response.status !== 400) {
-        console.log("About to load dashboard")
         loadDashboard()
       } else {
-        console.log("there was an error")
         console.log(response.status)
       }
         } catch (error) {

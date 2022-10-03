@@ -87,19 +87,16 @@ function reservationIsInFuture(req, res, next) {
   }
   next();
 }
-
-// getDay returns a num 0-6 where 0 is Monday, 6 is Sunday
-//validation check for 1 --> Tuesday
-function isTuesday(req, res, next) {
-  const { reservation_date } = req.body.data;
-  const dayNum = new Date(reservation_date).getUTCDay();
-  if (dayNum === 2) {
-    return next({
+function notTuesday(req,res,next) {
+  const { data = {} } = req.body;
+const dateObject = new Date(data["reservation_date"])
+if (dateObject.getUTCDay() === 2) {
+    next({
       status: 400,
-      message: `Sorry! We're closed on Tuesdays!`
-    })
-  }
-  next();
+      message: `Reservations cannot be made for Tuesday, as the restaurant is closed Tuesdays.`,
+    });
+}
+ next();
 }
 
 async function create(req, res, next) {
@@ -211,7 +208,7 @@ module.exports = {
     timeValidator,
     reservationIsInFuture,
     peopleIsNumber,
-    isTuesday,
+    notTuesday,
     reservationWithinOperatingHours,
     reservationStatus,
     asyncErrorBoundary(create),

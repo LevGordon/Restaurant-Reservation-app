@@ -2,7 +2,6 @@ import React from 'react'
 import ErrorAlert from './ErrorAlert';
 
 function ReservationForm({resData, submit, cancel, change, error}) {
-  console.log(submit)
 
     const formElement = (
         <form onSubmit={submit} className="row-lg col-sm">

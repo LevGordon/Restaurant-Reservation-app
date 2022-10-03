@@ -27,8 +27,6 @@ function Search() {
       }
     );
     const resData = await response.json();
-    console.log(resData);
-    console.log(resData.data.length);
     if (resData.data.length === 0) {
       setAltMessage("No reservations found.");
     }

@@ -28,7 +28,6 @@ function NewReservations() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    console.log(formData);
     const response = await fetch(`${REACT_APP_API_BASE_URL}/reservations`, {
       method: "POST",
       headers: {
@@ -39,13 +38,11 @@ function NewReservations() {
       }),
     });
     const resData = await response.json();
-    console.log(resData);
     if (resData.error) {
       setError(resData.error);
     }
     if (response.status !== 400) {
       setFormData({ ...initialFormState });
-      // history.goBack();
       history.push(`/dashboard?date=${formData.reservation_date}`);
     }
   };
